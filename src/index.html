@@ -19,10 +19,37 @@ bodyClass: "has-hero"
   </div>
 </section>
 
+<section class="sellos" data-block="sellos" aria-label="El estudio en números">
+  <div class="sellos-grid">
+    <div class="sello">
+      <span class="sello-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+      <span class="sello-num" data-count="1">1</span>
+      <span class="sello-label">cliente por día</span>
+    </div>
+    <div class="sello">
+      <span class="sello-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 1.8"/></svg></span>
+      <span class="sello-num" data-count="4" data-suffix="h+">+4/6 hrs</span>
+      <span class="sello-label">por sesión</span>
+    </div>
+    <div class="sello">
+      <span class="sello-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18.5 9.5a2.12 2.12 0 0 0-3-3L5 17v3z"/><path d="M13.5 6.5l3 3"/></svg></span>
+      <span class="sello-num" data-count="100" data-suffix="%">100%</span>
+      <span class="sello-label">diseño original</span>
+    </div>
+    <div class="sello">
+      <span class="sello-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <span class="sello-num" data-count="3">3</span>
+      <span class="sello-label">artistas de realismo</span>
+    </div>
+  </div>
+</section>
+
 <section data-block="2" aria-label="La obra">
-  <span class="kicker">02 · La obra</span>
-  <h2 class="section-title">Piezas <em>como proyecto,</em> no como catálogo</h2>
-  <p class="lede">Una manga no es un tatuaje: es un proyecto planificado. Cada ficha comunica el método —artista, zona, sesiones— porque el resultado depende de esas decisiones tanto como del dibujo.</p>
+  <div class="section-head">
+    <span class="kicker">PORTFOLIO</span>
+    <h2 class="section-title">Realismo en blanco y negro, <em>pieza por pieza</em></h2>
+    <p class="lede">Un recorrido por trabajos terminados en el estudio, desde piezas de una sola sesión hasta mangas y espaldas completas. Cada uno lleva su ficha —artista, zona y sesiones— para que veas cómo se planifica una pieza de realismo, no solo cómo queda.</p>
+  </div>
   <div class="carousel" data-carousel="obra">
     <div class="carousel-track">
       {% set destacados = portfolio | where("destacadoHome", true) %}
@@ -42,10 +69,12 @@ No borrar — retomar cuando haya pares de fotos curados (ver pendiente en sesio
 Reemplazado por bloque de 4 videos de proceso + trabajo terminado (pedido de Armelio).
 
 <section data-block="3" aria-label="Trabajos cicatrizados">
-  <span class="kicker">03 · Trabajos cicatrizados</span>
-  <h2 class="section-title">Cómo va a estar tu tatuaje <em>a las ocho semanas</em></h2>
-  <p class="lede">Un tatuaje recién terminado siempre se ve bien: la tinta está fresca y el contraste al máximo. La evaluación real es a las seis u ocho semanas, cuando la piel terminó de regenerarse. Ahí se ve si la línea mantuvo su definición, si los grises asentaron parejos, si el negro satura sin manchas.</p>
-  <p class="lede">Por eso publicamos nuestros trabajos cicatrizados junto a la foto del día de la sesión: es la única forma honesta de mostrar cómo va a estar tu tatuaje dentro de diez años.</p>
+  <div class="section-head">
+    <span class="kicker">03 · Trabajos cicatrizados</span>
+    <h2 class="section-title">Cómo va a estar tu tatuaje <em>a las ocho semanas</em></h2>
+    <p class="lede">Un tatuaje recién terminado siempre se ve bien: la tinta está fresca y el contraste al máximo. La evaluación real es a las seis u ocho semanas, cuando la piel terminó de regenerarse. Ahí se ve si la línea mantuvo su definición, si los grises asentaron parejos, si el negro satura sin manchas.</p>
+    <p class="lede">Por eso publicamos nuestros trabajos cicatrizados junto a la foto del día de la sesión: es la única forma honesta de mostrar cómo va a estar tu tatuaje dentro de diez años.</p>
+  </div>
   <div class="compare" data-compare aria-label="Slider comparativo: día de la sesión vs. ocho semanas después">
     <div class="compare-side after" aria-hidden="true"><span class="compare-label after">Cicatrizado · 8 sem</span></div>
     <div class="compare-side before" data-compare-before aria-hidden="true"><span class="compare-label before">Día de la sesión</span></div>
@@ -59,9 +88,11 @@ Reemplazado por bloque de 4 videos de proceso + trabajo terminado (pedido de Arm
 -->
 
 <section data-block="3" aria-label="Proceso en estudio">
-  <span class="kicker">04 · Proceso en estudio</span>
-  <h2 class="section-title">Ver <em>cómo</em> se hace, no solo el resultado</h2>
-  <p class="lede">Una foto terminada no muestra el pulso de la aguja, el tiempo real de una sesión ni cómo se prepara la piel antes de tatuar. Estos clips son proceso real de estudio, grabados en sesión: sin edición de agencia.</p>
+  <div class="section-head">
+    <span class="kicker">04 · Proceso en estudio</span>
+    <h2 class="section-title">Ver <em>cómo</em> se hace, no solo el resultado</h2>
+    <p class="lede">Una foto terminada no muestra el pulso de la aguja, el tiempo real de una sesión ni cómo se prepara la piel antes de tatuar. Estos clips son proceso real de estudio, grabados en sesión: sin edición de agencia.</p>
+  </div>
   <div class="grid" data-video-grid>
     {% for v in videos %}
     <div class="grid-card video-card" data-video-card>
@@ -87,9 +118,11 @@ Reemplazado por bloque de 4 videos de proceso + trabajo terminado (pedido de Arm
 </section>
 
 <section data-block="5" aria-label="Armelio y equipo">
-  <span class="kicker">05 · El equipo</span>
-  <h2 class="section-title">Un artista <em>por proyecto</em></h2>
-  <p class="lede">Cada idea que entra al estudio pasa por la evaluación de Armelio. Él decide quién ejecuta la pieza —él mismo, Lyvan o Macerll— según lo que la obra pida.</p>
+  <div class="section-head">
+    <span class="kicker">05 · El equipo</span>
+    <h2 class="section-title">Un artista <em>por proyecto</em></h2>
+    <p class="lede">Cada idea que entra al estudio pasa por la evaluación de Armelio. Él decide quién ejecuta la pieza —él mismo, Lyvan o Macerll— según lo que la obra pida.</p>
+  </div>
   <div class="team">
     <a href="/artistas/armelio/" class="team-card lead">
       <div class="ph v3">{% if artistas.armelio.imagen %}<img class="ph-img" src="{{ artistas.armelio.imagen }}" alt="{{ artistas.armelio.nombre }}" loading="lazy">{% else %}<span class="ph-label">{{ artistas.armelio.nombre }}</span>{% endif %}</div>
@@ -160,8 +193,10 @@ Reemplazado por bloque de 4 videos de proceso + trabajo terminado (pedido de Arm
 </section>
 
 <section class="invest" data-block="8" aria-label="Inversión y garantía">
-  <span class="kicker">08 · Inversión y garantía</span>
-  <h2 class="section-title">Precio claro, <em>respaldo real</em></h2>
+  <div class="section-head">
+    <span class="kicker">08 · Inversión y garantía</span>
+    <h2 class="section-title">Precio claro, <em>respaldo real</em></h2>
+  </div>
   <div class="ig-cards">
     <div class="ig-card">
       <span class="ig-eyebrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 8V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3"/><path d="M3 12h7m0 0-3-3m3 3-3 3"/></svg> Cómo cotizamos</span>

@@ -54,6 +54,9 @@
 
   h1.hero-title { font-size: 76px; }
   h1.hero-title.statement { font-size: 62px; max-width: 720px; }
+  .sellos-grid { grid-template-columns: repeat(4, 1fr); }
+  .sello { padding: 34px 16px; }
+  .sello-num { font-size: 46px; }
   .hero { height: 720px; }
 
   /* Page-hero (portada de páginas internas: portfolio, artistas) — el título y la bajada
@@ -119,6 +122,8 @@
   .hero-body { bottom: 72px; }
   h1.hero-title { font-size: 108px; }
   h1.hero-title.statement { font-size: 80px; max-width: 900px; }
+  .section-head { margin-bottom: 60px; }
+  .section-head h2.section-title { font-size: 54px; }
   .hero-sub { max-width: 480px; font-size: 16px; }
   h1.hero-title.statement + .hero-sub { max-width: 560px; }
 
