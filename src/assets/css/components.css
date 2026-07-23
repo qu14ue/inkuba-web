@@ -40,17 +40,17 @@ h1.hero-title.statement em{font-weight:700;color:#c3d2db}
 
 /* === Carousel genérico === */
 .carousel{position:relative;margin:0 -20px}
-.carousel-track{display:flex;gap:12px;padding:0 20px 4px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.carousel-track{display:flex;gap:20px;padding:0 20px 4px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .carousel-track::-webkit-scrollbar{display:none}
 @media(hover:hover) and (pointer:fine){.carousel-track{cursor:grab}}
 .carousel-track.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto;user-select:none}
 .carousel-track.dragging img{pointer-events:none}
 .carousel-slide{flex:0 0 78%;scroll-snap-align:start;display:flex;flex-direction:column}
 .carousel-slide .ph{margin-bottom:12px}
-.microficha{display:flex;flex-direction:column;gap:4px}
-.microficha .row{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.microficha .row strong{color:var(--fg-2);font-weight:500}
-.microficha .title{font-family:var(--font-display);font-weight:400;font-style:italic;font-size:18px;line-height:1.15;letter-spacing:-.005em;color:var(--fg);margin-top:4px}
+.microficha{display:flex;flex-direction:column;gap:5px}
+.microficha .ficha-meta{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.microficha .ficha-meta.top{color:var(--accent)}
+.microficha .title{font-family:var(--font-display);font-weight:400;font-style:italic;font-size:18px;line-height:1.15;letter-spacing:-.005em;color:var(--fg);margin:5px 0}
 .carousel-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 0}
 .dots{display:flex;gap:6px;align-items:center}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--border-2);transition:all .2s ease;border:none;padding:0;cursor:pointer}
@@ -95,22 +95,26 @@ h1.hero-title.statement em{font-weight:700;color:#c3d2db}
 .team-secondary .team-card p{font-size:12px}
 
 /* === Stepper "Cómo trabajamos" === */
-.steps{position:relative}
+.steps{position:relative;margin-top:36px}
 .step{position:relative;padding:0 0 32px 44px;border-left:1px solid var(--border-2);margin-left:15px}
 .step:last-child{padding-bottom:8px;border-left-color:transparent}
 .step .marker{position:absolute;left:-15px;top:-2px;width:30px;height:30px;border-radius:50%;background:var(--surface);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:15px;font-weight:500;color:var(--fg-2);font-variant-numeric:tabular-nums}
 .step.active .marker{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.step .step-title{font-family:var(--font-display);font-weight:500;font-size:20px;line-height:1.15;letter-spacing:-.01em;color:var(--fg);margin-bottom:8px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;cursor:pointer}
-.step .step-title em{font-style:italic;font-weight:400;color:var(--fg-2)}
+.step .step-title{font-family:var(--font-display);font-weight:500;font-size:23px;line-height:1.15;letter-spacing:-.01em;color:var(--fg);margin-bottom:10px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;cursor:pointer}
+.step .step-title em{font-style:normal;font-weight:500;color:var(--accent)}
+.step .st-label .lead{font-weight:600;font-size:1.06em;color:var(--fg)}
+.step .st-label .tail{font-weight:400;color:var(--accent)}
 .step .step-title .chev{color:var(--muted-2);transition:transform .2s ease}
-.step p{font-size:13px;line-height:1.6;color:var(--muted);overflow:hidden;max-height:500px;transition:max-height .32s ease,opacity .2s ease}
+.step p{font-size:15px;line-height:1.62;color:var(--fg-2);overflow:hidden;max-height:500px;transition:max-height .32s ease,opacity .2s ease}
 .step.collapsed p{max-height:0;opacity:0}
 .step.collapsed .chev{transform:rotate(-90deg)}
 .stepper-cta{margin-top:40px}
+.works .section-title em{color:var(--accent)}
 .works-media{margin:0;display:none}
 
 /* === El estudio === */
-.ubi-grid{display:flex;flex-direction:column;gap:24px}
+.ubicacion .section-title em{color:var(--accent)}
+.ubi-grid{display:flex;flex-direction:column;gap:24px;margin-top:36px}
 .ubi-map{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--surface-2)}
 .ubi-map iframe{display:block;width:100%;height:260px;border:0;filter:grayscale(1) invert(.92) contrast(.9) hue-rotate(180deg)}
 .ubi-info{display:flex;flex-direction:column;gap:20px}
@@ -135,6 +139,8 @@ h1.hero-title.statement em{font-weight:700;color:#c3d2db}
 /* === Reviews === */
 .reviews-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;gap:10px;flex-wrap:wrap}
 .reviews-head h2{margin-bottom:0}
+.reviews-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;flex-wrap:wrap}
+.reviews-foot .section-out{margin-top:0}
 .reviews-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--fg-2)}
 .reviews-badge .stars{color:#fbbc05;letter-spacing:-.05em;font-size:14px}
 .g-logo{width:18px;height:18px;flex-shrink:0}
@@ -165,6 +171,7 @@ h1.hero-title.statement em{font-weight:700;color:#c3d2db}
 .reviews-out{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:12px;font-weight:500;color:var(--fg-2);letter-spacing:.02em;border-bottom:1px solid var(--border-2);padding-bottom:6px;cursor:pointer}
 
 /* === FAQ === */
+.faq .section-title em{color:var(--accent)}
 .faq-media{margin:0;display:none}
 .faq-item{border-top:1px solid var(--border)}
 .faq-item:last-of-type{border-bottom:1px solid var(--border)}

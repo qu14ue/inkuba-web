@@ -22,9 +22,9 @@
     {% if p.imagen %}<img class="ph-img" src="{{ p.imagen }}" alt="{{ p.titulo }}" loading="lazy">{% else %}<span class="ph-label">Pieza {{ "0" if index + 1 < 10 else "" }}{{ index + 1 }}</span>{% endif %}
   </div>
   <div class="microficha">
-    <div class="row"><span>{{ p.estilo }}</span><strong>{{ p.sesiones }} sesi{{ "ón" if p.sesiones == 1 else "ones" }}</strong></div>
+    <div class="ficha-meta top">{{ p.estilo }} · {{ p.sesiones }} sesi{{ "ón" if p.sesiones == 1 else "ones" }}</div>
     <h3 class="title">{{ p.titulo }}</h3>
-    <div class="row"><span>{{ p.artista }}</span><span>{{ p.zona }}</span></div>
+    <div class="ficha-meta">{{ p.artista }} · {{ p.zona }}</div>
   </div>
 </article>
 {% endmacro %}

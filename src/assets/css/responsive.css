@@ -132,6 +132,7 @@
 
   /* Carruseles: 3 slides visibles en vez de scroll de a una */
   .carousel-slide { flex-basis: 30%; }
+  .carousel-track { gap: 30px; }
 
   .reviews-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
@@ -145,7 +146,7 @@
   .team-secondary .team-card .name { font-size: 28px; }
 
   /* Dónde estamos: mapa a la izquierda, datos + cómo llegar a la derecha */
-  section.ubicacion .ubi-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+  section.ubicacion .ubi-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; margin-top: 48px; }
   section.ubicacion .ubi-map iframe { height: 100%; min-height: 380px; }
   section.ubicacion .ubi-info { justify-content: center; }
 
