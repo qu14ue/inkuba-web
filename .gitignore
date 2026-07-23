@@ -1,0 +1,17 @@
+# dependencias
+node_modules/
+
+# build de Eleventy
+_site/
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.vscode/
+.idea/
+
+# entorno
+.env
+.env.*

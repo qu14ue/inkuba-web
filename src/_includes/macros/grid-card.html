@@ -1,0 +1,30 @@
+{% macro gridCard(p, index) %}
+{% set variants = ["", "v2", "v3", "v4", "v5", "v6"] %}
+{% set v = variants[index % 6] %}
+<div class="grid-card" data-lightbox-trigger tabindex="0" role="button">
+  <div class="ph {{ v }}">
+    {% if p.imagen %}<img class="ph-img" src="{{ p.imagen }}" alt="{{ p.titulo }}" loading="lazy">{% endif %}
+    {% if p.estado == "cicatrizado" %}<span class="status-tag cicatrizado">Cicatrizado{% if p.semanas %} · {{ p.semanas }} sem{% endif %}</span>{% else %}<span class="status-tag">Reciente</span>{% endif %}
+  </div>
+  <h3 class="card-title">{{ p.titulo }}</h3>
+  <div class="card-meta">
+    <div class="row"><span>{{ p.artista }}</span><strong>{{ p.sesiones }} sesi{{ "ón" if p.sesiones == 1 else "ones" }}</strong></div>
+    <div class="row"><span>{{ p.zona }}</span><span>{{ p.estilo }}</span></div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro carouselSlide(p, index) %}
+{% set variants = ["", "v2", "v3", "v4", "v5", "v6"] %}
+{% set v = variants[index % 6] %}
+<article class="carousel-slide">
+  <div class="ph {{ v }}">
+    {% if p.imagen %}<img class="ph-img" src="{{ p.imagen }}" alt="{{ p.titulo }}" loading="lazy">{% else %}<span class="ph-label">Pieza {{ "0" if index + 1 < 10 else "" }}{{ index + 1 }}</span>{% endif %}
+  </div>
+  <div class="microficha">
+    <div class="row"><span>{{ p.estilo }}</span><strong>{{ p.sesiones }} sesi{{ "ón" if p.sesiones == 1 else "ones" }}</strong></div>
+    <h3 class="title">{{ p.titulo }}</h3>
+    <div class="row"><span>{{ p.artista }}</span><span>{{ p.zona }}</span></div>
+  </div>
+</article>
+{% endmacro %}

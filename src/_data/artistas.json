@@ -1,0 +1,37 @@
+{
+  "armelio": {
+    "slug": "armelio",
+    "nombre": "Armelio",
+    "rol": "Fundador & director",
+    "especialidad": "Black & grey · Realismo",
+    "anios": 10,
+    "piezasTerminadas": 500,
+    "instagram": "https://instagram.com/armelio_tattoo",
+    "bioCorta": "Fundador y director. Realismo black & grey de gran formato. Cada proyecto que entra al estudio pasa por su evaluación.",
+    "imagen": "/assets/img/artistas/armelio.webp"
+  },
+  "lyvan": {
+    "slug": "lyvan",
+    "nombre": "Lyvan",
+    "rol": "Senior",
+    "especialidad": "Realismo · Black & grey",
+    "anios": 6,
+    "piezasTerminadas": 240,
+    "instagram": "https://instagram.com/lyvan_tattoo",
+    "bioCorta": "Trabaja realismo y black & grey. Piezas de mediana y gran escala en las que se prioriza precisión de línea y saturación pareja.",
+    "datosPlaceholder": true,
+    "imagen": "/assets/img/artistas/lyvan.webp"
+  },
+  "macerll": {
+    "slug": "macerll",
+    "nombre": "Macerll",
+    "rol": "Junior",
+    "especialidad": "Piezas lineales",
+    "anios": 2,
+    "piezasTerminadas": 70,
+    "instagram": "https://instagram.com/macerll_tattoo",
+    "bioCorta": "Piezas lineales y de menor formato. Suele ser la entrada al estudio para quienes se hacen su primer tatuaje.",
+    "datosPlaceholder": true,
+    "imagen": "/assets/img/artistas/macell.webp"
+  }
+}

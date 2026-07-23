@@ -1,0 +1,197 @@
+/*
+  Breakpoints (mobile-first — todo lo que no está en un @media es el diseño
+  base para <768px, ya validado):
+
+  Tablet   >= 768px
+  Desktop  >= 1024px
+  Wide     >= 1440px  (solo sube el tope de ancho del container)
+
+  Arquitectura clave: las secciones (fondo, gradiente, bordes) SIEMPRE ocupan
+  el 100% del viewport — nunca les ponemos max-width. Lo que se centra es el
+  CONTENIDO, vía padding-left/right dinámico (--edge-pad). Así el fondo llega
+  de punta a punta y el texto/grid queda en una columna cómoda. El carrusel
+  usa margen negativo igual a --edge-pad para volver a tocar el borde real.
+*/
+
+/* ============ TABLET (>= 768px) ============ */
+@media (min-width: 768px) {
+  :root {
+    --container: 720px;
+    --edge-pad: max(24px, calc((100vw - var(--container)) / 2));
+  }
+
+  /* Reset: nada de max-width/margin:auto en los contenedores con fondo — full width siempre */
+  main, .header, footer, .filter-bar, .mobile-menu { max-width: none; margin: 0; }
+
+  section,
+  .header,
+  footer,
+  .warranty, .cta-final, .cta-compact, section[data-block="cta"],
+  .bio-block, .page-hero, .grid-section {
+    padding-left: var(--edge-pad);
+    padding-right: var(--edge-pad);
+  }
+  .filter-top, .chips-row, .applied-row { padding-left: var(--edge-pad); padding-right: var(--edge-pad); }
+  .breadcrumb { padding-left: var(--edge-pad); padding-right: var(--edge-pad); }
+  section[data-block="1"] { padding-left: 0; padding-right: 0; } /* hero: sin padding de sección, lo maneja hero-body */
+
+  .hero-body, .hero-artist .hero-body { left: var(--edge-pad); right: var(--edge-pad); }
+  .hero-artist .portrait-label { left: var(--edge-pad); }
+  .hero-artist .portrait-caption { right: var(--edge-pad); }
+
+  /* Fondo uniforme (opción A elegida): a partir de tablet, las secciones "chrome"
+     dejan de tener cada una su propio degradé — todas quedan en el mismo tono de
+     fondo, y la separación es solo la línea fina (hairline) que ya traían. Las
+     superficies que simulan foto/video (hero, retrato de artista, comparador,
+     mapa) conservan su degradé porque ahí sí cumple una función. */
+  section[data-block="2"], section[data-block="3"], section[data-block="4"],
+  section[data-block="5"], section[data-block="6"], section[data-block="7"],
+  section[data-block="8"], section[data-block="9"], section[data-block="10"],
+  section[data-block="11"],
+  .warranty, .cta-final, .cta-compact, section[data-block="cta"], .page-hero {
+    background: var(--bg);
+  }
+
+  h1.hero-title { font-size: 76px; }
+  .hero { height: 720px; }
+
+  /* Page-hero (portada de páginas internas: portfolio, artistas) — el título y la bajada
+     mobile quedan chicos dentro de la caja full-width, hay que escalarlos igual que el hero. */
+  .page-hero { padding-top: 48px; padding-bottom: 40px; }
+  h1.page-title { font-size: 60px; }
+  p.page-lede { max-width: 460px; font-size: 15px; }
+
+  .carousel { margin-left: calc(-1 * var(--edge-pad)); margin-right: calc(-1 * var(--edge-pad)); }
+  .carousel-track { padding-left: var(--edge-pad); padding-right: var(--edge-pad); }
+
+  .grid { grid-template-columns: repeat(3, 1fr); }
+
+  .reviews-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
+/* ============ DESKTOP (>= 1024px) ============ */
+@media (min-width: 1024px) {
+  :root {
+    --container: 1180px;
+    --reading: 680px;
+    --edge-pad: max(64px, calc((100vw - var(--container)) / 2));
+    --header-h: 84px;
+  }
+
+  /* Header: Logo — nav — CTA al final (orden estándar, CTA como acción final a la derecha) */
+  .hamb { display: none; }
+  .header { padding-top: 18px; padding-bottom: 18px; justify-content: flex-start; gap: 40px; }
+  .brand { order: 1; }
+  .mobile-menu {
+    order: 2;
+    position: static; transform: none; opacity: 1; pointer-events: auto;
+    flex-direction: row; align-items: center; gap: 28px;
+    background: none; border: 0; padding: 0; max-width: none; width: auto;
+  }
+  .mobile-menu a { border-top: 0; padding: 0; font-size: 13px; color: var(--fg-2); }
+  .header-right { order: 3; margin-left: auto; }
+
+  /* Ritmo vertical más generoso en secciones genéricas (las clases especiales conservan el suyo) */
+  section { padding-top: 96px; padding-bottom: 96px; }
+  section[data-block="1"] { padding-top: 0; padding-bottom: 0; }
+  .hero { padding: 0; }
+
+  h2.section-title { font-size: 48px; }
+
+  h1.page-title { font-size: 72px; }
+  p.page-lede { max-width: var(--reading); }
+
+  /* Columna de lectura angosta para bloques de texto denso — no estirar a todo el ancho */
+  .bio-block .bio-copy,
+  .warranty p,
+  .invest p,
+  .steps { max-width: var(--reading); }
+
+  /* Hero: más aire y tipografía mayor. Centrado como mobile (sin split de foto/texto)
+     — foto de fondo real desde 1024px (hero-desktop), la de mobile es más alta/vertical. */
+  .hero { height: 82vh; min-height: 560px; }
+  .hero-media {
+    background-image: url('/assets/img/hero/hero-desktop.jpg');
+    background-image: image-set(url('/assets/img/hero/hero-desktop.webp') type('image/webp'), url('/assets/img/hero/hero-desktop.jpg') type('image/jpeg'));
+    background-position: center;
+  }
+  .hero-body { bottom: 72px; }
+  h1.hero-title { font-size: 108px; }
+  .hero-sub { max-width: 480px; font-size: 16px; }
+
+  /* Hero de artista: mismo criterio */
+  .hero-artist .name { font-size: 88px; }
+
+  /* Carruseles: 3 slides visibles en vez de scroll de a una */
+  .carousel-slide { flex-basis: 30%; }
+
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  /* Slider comparativo: más grande y centrado, no estirado a todo el ancho */
+  .compare, .compare-meta, .compare-hint { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+  /* Equipo: 3 columnas en una fila, no columna + par */
+  .team { flex-direction: row; gap: 32px; align-items: flex-start; }
+  .team-card.lead { flex: 1.3; }
+  .team-secondary { flex: 2; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .team-secondary .team-card .name { font-size: 28px; }
+
+  /* Dónde estamos: mapa a la izquierda, datos + cómo llegar a la derecha */
+  section.ubicacion .ubi-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+  section.ubicacion .ubi-map iframe { height: 100%; min-height: 380px; }
+  section.ubicacion .ubi-info { justify-content: center; }
+
+  /* CTA final: fondo landscape + más altura, cierre en espejo del hero */
+  .cta-media { background-image: url('/assets/img/hero/hero-desktop.jpg'); background-image: image-set(url('/assets/img/hero/hero-desktop.webp') type('image/webp'), url('/assets/img/hero/hero-desktop.jpg') type('image/jpeg')); }
+  .cta-inner { padding: 128px 20px; max-width: 720px; }
+  .cta-final h2 { font-size: 60px; }
+  .cta-final .cta-lede { font-size: 18px; }
+
+  /* FAQ: imagen a la izquierda, acordeón a la derecha (ocupa el ancho) */
+  section.faq { display: grid; grid-template-columns: 0.8fr 1fr; gap: 64px; align-items: start; }
+  section.faq .faq-media { display: block; align-self: start; aspect-ratio: 4 / 5; }
+  section.faq .faq-media img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+
+  /* Cómo trabajamos: texto a la izquierda, foto del estudio a la derecha */
+  section.works { display: grid; grid-template-columns: 1fr 0.85fr; gap: 64px; align-items: center; }
+  section.works .works-media { display: block; align-self: center; aspect-ratio: 4 / 5; }
+  section.works .works-media video { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block; background: #000; }
+
+  /* Inversión y garantía: dos tarjetas lado a lado */
+  .ig-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+
+  /* Portfolio y galerías: 4 columnas */
+  .grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+  /* CTA final: columnas con más aire */
+  .cta-final .cta-cols, section[data-block="cta"] .cta-cols { grid-template-columns: 1fr 1fr; gap: 56px; }
+  .cta-final .cta-primary, section[data-block="cta"] .cta-primary,
+  .cta-compact .cta-primary { max-width: 340px; }
+
+  /* Footer: tres zonas — marca · navegación · contacto */
+  footer { padding-top: 64px; }
+  footer .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr; column-gap: 56px; }
+
+  /* Portfolio: el drawer de filtros pasa a ser panel lateral, no bottom sheet */
+  .drawer {
+    left: auto; right: 0; top: 0; bottom: 0; width: 420px; max-width: 420px;
+    max-height: 100vh; border-radius: 0; border-left: 1px solid var(--border-2); border-top: 0;
+    transform: translateX(100%);
+  }
+  .drawer.open { transform: translateX(0); }
+}
+
+/* ============ WIDE (>= 1440px) — tope de ancho + hero a pantalla completa ============ */
+@media (min-width: 1440px) {
+  :root {
+    --container: 1320px;
+    --edge-pad: max(64px, calc((100vw - var(--container)) / 2));
+  }
+
+  /* A esta resolución el hero deja de ser "una sección más" y pasa a ocupar el viewport
+     entero, como en la referencia (coming soon) — más impacto en la primera pantalla. */
+  .hero { height: 100vh; height: 100svh; min-height: 720px; }
+  /* Con el hero a pantalla completa, bottom:72px queda pegado al piso — subimos el bloque
+     de texto para que quede en el tercio inferior, no en el borde. */
+  .hero-body { bottom: 120px; }
+}

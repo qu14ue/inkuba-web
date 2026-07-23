@@ -1,0 +1,68 @@
+---
+layout: layouts/base.html
+title: "Macerll — Artista en InKuba Tatto&Art Studio"
+description: "Macerll, tatuador en InKuba. Piezas lineales y de menor formato, entrada natural para primer tatuaje."
+permalink: /artistas/macerll/
+---
+{% from "macros/grid-card.html" import gridCard %}
+{% set piezasMacerll = portfolio | where("artistaSlug", "macerll") %}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Inicio</a><span class="sep">/</span><a href="/artistas/">Artistas</a><span class="sep">/</span><span class="current">Macerll</span>
+</nav>
+
+<section class="hero-artist" data-block="hero" aria-label="Macerll — retrato y datos">
+  <div class="portrait" aria-hidden="true">
+    <span class="portrait-label">Retrato · Estudio</span>
+    <span class="portrait-caption">Rauch 3974<br>Buenos Aires</span>
+    <div class="hero-body">
+      <span class="role-line">Tatuador · Junior</span>
+      <h1 class="name">Macerll</h1>
+      <span class="name-underline">Piezas lineales</span>
+      <!-- Años / piezas / Instagram: datos de placeholder pedidos por el cliente para completar el diseño.
+           Reemplazar por los reales de Macerll antes de publicar (ver artistas.json, campo datosPlaceholder). -->
+      <div class="meta-row">
+        <div class="item"><strong>{{ artistas.macerll.anios }}+</strong><span>Años</span></div>
+        <span class="sep"></span>
+        <div class="item"><strong>{{ artistas.macerll.piezasTerminadas }}+</strong><span>Piezas</span></div>
+        <span class="sep"></span>
+        <div class="item"><strong>{{ piezasMacerll | length }}</strong><span>En portfolio</span></div>
+      </div>
+      <a class="ig-line" href="{{ artistas.macerll.instagram }}" aria-label="Instagram de Macerll">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+        @macerll_tattoo
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bio-block" data-block="bio" aria-label="Bio de Macerll">
+  <span class="kicker">Bio</span>
+  <h2 class="section-title">La entrada <em>natural</em></h2>
+  <div class="bio-copy">
+    <p><span class="first-word">Macerll</span> es el tercer artista incorporado al estudio. Se especializa en piezas lineales y de menor formato, y suele ser la puerta de entrada para quienes se hacen su primer tatuaje en InKuba.</p>
+    <p>Como en todo el estudio, cada idea pasa primero por la evaluación de Armelio, que define si el proyecto es para Macerll según la escala y la complejidad que pida.</p>
+  </div>
+</section>
+
+<section data-block="galeria" aria-label="Galería de piezas de Macerll">
+  <span class="kicker">Portfolio de Macerll</span>
+  <h2 class="section-title">Obra <em>documentada</em></h2>
+  <div class="gallery-head">
+    <div class="h-left"><span class="gallery-count"><strong>{{ piezasMacerll | length }}</strong> piezas · <strong>{{ (piezasMacerll | where("estado","cicatrizado")) | length }}</strong> cicatrizadas</span></div>
+  </div>
+  <div class="grid">
+    {% for p in piezasMacerll %}{{ gridCard(p, loop.index0) }}{% endfor %}
+  </div>
+  <a href="/portfolio/?artista=macerll" class="gallery-out">Ver las {{ piezasMacerll | length }} piezas de Macerll <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<section id="cta" data-block="cta" aria-label="Contanos tu idea para Macerll">
+  <span class="kicker">Contanos tu idea</span>
+  <h2>Tu primer <em>tatuaje</em></h2>
+  <p>Mandanos tu idea, la zona del cuerpo y las referencias que tengas. En menos de 24 horas tenés una cotización concreta, sin cargo y sin compromiso.</p>
+  <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Macerll%20en%20InKuba" class="cta-primary" aria-label="Abrir WhatsApp con mensaje precargado para Macerll">
+    Contanos tu idea
+    <span class="cta-icon">WhatsApp <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+  </a>
+</section>

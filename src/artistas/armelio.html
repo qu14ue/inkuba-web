@@ -1,0 +1,158 @@
+---
+layout: layouts/base.html
+title: "Armelio — Artista en InKuba Tatto&Art Studio"
+description: "Armelio, fundador y director de InKuba. Diez años de oficio, realismo y black & grey de gran formato, más de 500 piezas terminadas y documentadas."
+permalink: /artistas/armelio/
+---
+{% from "macros/grid-card.html" import gridCard %}
+{% set piezasArmelio = portfolio | where("artistaSlug", "armelio") %}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Inicio</a><span class="sep">/</span><a href="/artistas/">Artistas</a><span class="sep">/</span><span class="current">Armelio</span>
+</nav>
+
+<section class="hero-artist" data-block="hero" aria-label="Armelio — retrato y datos">
+  <div class="portrait" aria-hidden="true">
+    <span class="portrait-label">Retrato · Estudio</span>
+    <span class="portrait-caption">Rauch 3974<br>Buenos Aires</span>
+    <div class="hero-body">
+      <span class="role-line">Fundador · Director</span>
+      <h1 class="name">Armelio</h1>
+      <span class="name-underline">Black &amp; grey · Realismo</span>
+      <div class="meta-row">
+        <div class="item"><strong>{{ artistas.armelio.anios }}+</strong><span>Años</span></div>
+        <span class="sep"></span>
+        <div class="item"><strong>{{ artistas.armelio.piezasTerminadas }}+</strong><span>Piezas</span></div>
+        <span class="sep"></span>
+        <div class="item"><strong>{{ piezasArmelio | length }}</strong><span>En portfolio</span></div>
+      </div>
+      <a class="ig-line" href="https://instagram.com/armelio_tattoo" aria-label="Instagram de Armelio">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+        @armelio_tattoo
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bio-block" data-block="bio" aria-label="Bio de Armelio">
+  <span class="kicker">Bio</span>
+  <h2 class="section-title">Diez años <em>de oficio</em></h2>
+  <div class="bio-copy">
+    <p><span class="first-word">Armelio</span> dibuja desde mucho antes de que esto fuera un oficio. Hace más de diez años que tatúa, y hace tiempo que su trabajo se concentra en lo que define su obra: el realismo en blanco y negro de gran formato —retratos, composiciones alegóricas, mangas completas.</p>
+    <p>Fundó InKuba como estudio privado para poder trabajar como este estilo lo exige: un proyecto por vez, sesiones largas que no se cortan con el reloj, y un diseño original desarrollado sobre la anatomía de cada cliente antes de la primera aguja.</p>
+    <p>Lleva más de quinientas piezas de realismo terminadas y documentadas. Una parte de sus clientes viaja desde otras provincias para tatuarse con él.</p>
+    <p>En InKuba, cada idea que entra pasa por su evaluación: si funciona en la zona elegida, qué escala necesita el detalle, cómo va a envejecer la pieza. Él decide quién la ejecuta —él mismo, Lyvan o Macerll— y el estudio responde por el resultado hasta después de la cicatrización.</p>
+  </div>
+</section>
+
+<section class="video-block" data-block="video" aria-label="Entrevista en video">
+  <span class="kicker">Entrevista</span>
+  <h2 class="section-title">En sus <em>palabras</em></h2>
+  <p class="lede">Cómo lee una idea antes de dibujarla, por qué el diseño ocurre sobre la piel y no en el papel, cómo decide qué pieza toma él y cuál pasa a Lyvan o a Macerll.</p>
+  <div class="video-poster" aria-label="Reproducir entrevista con Armelio">
+    <button class="play-btn" aria-label="Reproducir video">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg>
+    </button>
+    <div class="video-caption">
+      <span class="cap-title">Entrevista — método de trabajo</span>
+      <span class="cap-meta"><span class="dur">04:12</span> · Rauch 3974 · 2024</span>
+    </div>
+  </div>
+  <div class="video-note">
+    <span>Video · sin edición</span>
+    <strong>Un plano · Un turno</strong>
+  </div>
+</section>
+
+<section data-block="criterio" aria-label="Criterio de composición">
+  <span class="kicker">Criterio · Composición</span>
+  <h2 class="section-title">Cuatro decisiones <em>antes de la primera aguja</em></h2>
+  <p class="lede">Lo que evalúa Armelio en cada proyecto que entra al estudio, antes de que se dibuje una sola línea.</p>
+  <div class="pillars">
+    <article class="pillar">
+      <div class="num-title"><span class="num">01</span><h3 class="title">Anatomía <em>como grilla</em></h3></div>
+      <p>Cada composición se planifica sobre el volumen real del cuerpo del cliente. No se dibuja plano y después se adapta: se dibuja ya en la zona, con la piel estirada, para que las líneas sigan la musculatura y la pieza envejezca con el cuerpo.</p>
+    </article>
+    <article class="pillar">
+      <div class="num-title"><span class="num">02</span><h3 class="title">Escala <em>y distancia de lectura</em></h3></div>
+      <p>Un retrato de 15 cm no puede tener el mismo nivel de detalle que uno de 30 cm: la piel humana no lee la misma información a esas escalas. La escala determina cuánto detalle admite la pieza sin saturarse ni empastarse con los años.</p>
+    </article>
+    <article class="pillar">
+      <div class="num-title"><span class="num">03</span><h3 class="title">Rango tonal <em>del black &amp; grey</em></h3></div>
+      <p>Trabajar en escala de grises no es trabajar sin color: es controlar todo el rango entre el negro pleno y la piel limpia. La luz se construye por sustracción, cuidando el contraste que la piel va a mantener a los diez años, no el que se ve el día de la sesión.</p>
+    </article>
+    <article class="pillar">
+      <div class="num-title"><span class="num">04</span><h3 class="title">Composición <em>para durar</em></h3></div>
+      <p>Antes de tatuar se decide qué elementos aguantan la simplificación del tiempo y cuáles no. Los grises muy finos se pierden; los negros muy densos manchan si no se compensan. La pieza se compone pensada como va a estar dentro de una década, no como se ve mañana.</p>
+    </article>
+  </div>
+</section>
+
+<section data-block="galeria" aria-label="Galería de piezas de Armelio">
+  <span class="kicker">Portfolio de Armelio</span>
+  <h2 class="section-title">Obra <em>documentada</em></h2>
+  <div class="gallery-head">
+    <div class="h-left"><span class="gallery-count"><strong>{{ piezasArmelio | length }}</strong> piezas · <strong>{{ (piezasArmelio | where("estado","cicatrizado")) | length }}</strong> cicatrizadas</span></div>
+  </div>
+  <div class="mini-filters" role="tablist" aria-label="Filtros de la galería de Armelio">
+    <button class="mini-chip active">Todo <span class="count-num">{{ piezasArmelio | length }}</span></button>
+    <button class="mini-chip">Cicatrizado <span class="count-num">{{ (piezasArmelio | where("estado","cicatrizado")) | length }}</span></button>
+    <button class="mini-chip">Realismo <span class="count-num">{{ (piezasArmelio | where("estilo","Realismo")) | length }}</span></button>
+    <button class="mini-chip">Alegórico <span class="count-num">{{ (piezasArmelio | where("estilo","Alegórico")) | length }}</span></button>
+    <button class="mini-chip">Gran formato <span class="count-num">{{ (piezasArmelio | whereTag("gran-formato")) | length }}</span></button>
+    <button class="mini-chip">Cover-up <span class="count-num">{{ (piezasArmelio | whereTag("cover-up")) | length }}</span></button>
+  </div>
+  <div class="grid">
+    {% for p in piezasArmelio %}{{ gridCard(p, loop.index0) }}{% endfor %}
+  </div>
+  <a href="/portfolio/?artista=armelio" class="gallery-out">Ver las {{ piezasArmelio | length }} piezas de Armelio <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<section data-block="proceso" aria-label="Cómo trabaja Armelio">
+  <span class="kicker">Cómo trabaja Armelio</span>
+  <h2 class="section-title">Un proyecto <em>por vez</em></h2>
+  <p class="lede">Toda idea que entra al estudio pasa por su evaluación: viabilidad en la zona, escala, cantidad de sesiones, cómo va a envejecer. Si no funciona, se lo dice al cliente y propone alternativas.</p>
+  <a class="proceso-callout" href="/#como-trabajamos" aria-label="Ver los 5 pasos del método del estudio">
+    <div class="txt">
+      <span class="lab">Método del estudio</span>
+      <span class="t">Ver los <em>cinco pasos</em></span>
+    </div>
+    <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+  </a>
+</section>
+
+<section data-block="reviews" aria-label="Reseñas sobre Armelio y el estudio">
+  <div class="reviews-head">
+    <div><span class="kicker" style="margin-bottom:8px;">Reseñas · Armelio y estudio</span><h2 class="section-title">Lo que <em>escriben</em></h2></div>
+    <div class="reviews-badge"><span class="stars">★★★★★</span><span class="num">4.9</span><span class="muted">Google · 41 reseñas</span></div>
+  </div>
+  <p class="reviews-note">Reseñas verificadas en Google que mencionan al estudio y al trabajo de Armelio. Se publican sin editar.</p>
+  <div class="review-list">
+    <article class="review-card">
+      <span class="stars">★★★★★</span>
+      <blockquote>&ldquo;Mi experiencia fue 10/10. Calidez, atención, diseño, dedicación e higiene. Necesitaba arreglar un tatuaje muyyy mal logrado que me hice en otro estudio…&rdquo;</blockquote>
+      <span class="author">Sara Vedoya · <strong>5★</strong></span>
+    </article>
+    <article class="review-card">
+      <span class="stars">★★★★★</span>
+      <blockquote>&ldquo;Llegué sin tatuajes para hacerme el primero y ya llevo 5, simplemente perfectos.&rdquo;</blockquote>
+      <span class="author">Misha El Dinosaurio · <strong>5★</strong></span>
+    </article>
+    <article class="review-card">
+      <span class="stars">★★★★★</span>
+      <blockquote>&ldquo;La cicatrización quedó pareja en toda la pieza. A las ocho semanas la línea seguía definida y el trabajo de sombra asentó como estaba planteado desde el diseño.&rdquo;</blockquote>
+      <span class="author">Cliente · <strong>5★</strong></span>
+    </article>
+  </div>
+  <a href="https://g.page/inkuba" class="reviews-out">Ver todas en Google <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<section id="cta" data-block="cta" aria-label="Contanos tu idea para Armelio">
+  <span class="kicker">Contanos tu idea</span>
+  <h2>Un proyecto <em>con Armelio</em></h2>
+  <p>Mandanos tu idea, la zona del cuerpo y las referencias que tengas. Armelio la evalúa personalmente y en menos de 24 horas tenés una cotización concreta, sin cargo y sin compromiso. Si la idea no va a funcionar en la zona o escala, te lo decimos.</p>
+  <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Armelio%20en%20InKuba" class="cta-primary" aria-label="Abrir WhatsApp con mensaje precargado para Armelio">
+    Contanos tu idea
+    <span class="cta-icon">WhatsApp <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+  </a>
+</section>

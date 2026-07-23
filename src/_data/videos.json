@@ -1,0 +1,6 @@
+[
+  { "slug": "manga-proceso", "titulo": "Sesión en curso — manga de gran formato", "categoria": "proceso", "artista": null, "video": "/assets/video/reels/manga_proceso_web.mp4", "poster": "/assets/img/reels/manga_proceso.jpg" },
+  { "slug": "personaje-favorito", "titulo": "Personaje favorito — realismo black & grey", "categoria": "terminado", "artista": null, "video": "/assets/video/reels/personaje_favorito_web.mp4", "poster": "/assets/img/reels/personaje_favorito.jpg" },
+  { "slug": "primer-tattoo", "titulo": "Cómo se define el tamaño de una pieza", "categoria": "proceso", "artista": null, "video": "/assets/video/reels/primer_tattoo_web.mp4", "poster": "/assets/img/reels/primer_tattoo.jpg" },
+  { "slug": "proceso-diseno", "titulo": "Manga completa — dragón y castillo", "categoria": "terminado", "artista": null, "video": "/assets/video/reels/proceso_diseño_web.mp4", "poster": "/assets/img/reels/proceso_diseño.jpg" }
+]

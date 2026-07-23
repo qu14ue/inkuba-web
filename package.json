@@ -1,0 +1,13 @@
+{
+  "name": "inkuba-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sitio web de InKuba Tatto&Art Studio — Eleventy",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

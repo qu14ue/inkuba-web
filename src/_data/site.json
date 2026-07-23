@@ -1,0 +1,16 @@
+{
+  "nombre": "InKuba Tatto&Art Studio",
+  "whatsapp": "541133328666",
+  "direccion": "Rauch 3974, CABA",
+  "barrio": "Caballito / Almagro",
+  "instagramEstudio": "https://instagram.com/inkuba_tattoo_studio",
+  "instagramArmelio": "https://instagram.com/armelio_tattoo",
+  "google": "https://g.page/inkuba",
+  "garantia": "Revisión y retoque sin costo, 90 días desde la última sesión.",
+  "nav": [
+    { "label": "Portfolio", "url": "/portfolio/" },
+    { "label": "Artistas", "url": "/artistas/armelio/" },
+    { "label": "Cómo trabajamos", "url": "/#como-trabajamos" },
+    { "label": "FAQ", "url": "/faq/" }
+  ]
+}

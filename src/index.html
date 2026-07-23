@@ -1,0 +1,241 @@
+---
+layout: layouts/base.html
+title: "InKuba Tatto&Art Studio — Realismo y black & grey de gran formato"
+description: "Estudio privado de tatuajes en Buenos Aires. Realismo y black & grey de gran formato, dirigido por Armelio. Trabajos cicatrizados documentados y garantía de retoque 90 días."
+bodyClass: "has-hero"
+---
+{% from "macros/grid-card.html" import carouselSlide %}
+<section class="hero" data-block="1" aria-label="Hero — InKuba Tatto&Art Studio">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-body">
+    <span class="hero-eyebrow">Buenos Aires · Estudio privado · Rauch 3974</span>
+    <h1 class="hero-title">INKUBA <em>Tatto & Art</em> Studio</h1>
+    <p class="hero-sub">Realismo y Black & Grey de gran formato. Estudio privado en Buenos Aires.</p>
+    <div class="hero-evidence"><span>{{ artistas.armelio.anios }} años</span> · <span>+{{ artistas.armelio.piezasTerminadas }}</span> piezas de realismo terminadas</div>
+    <a href="#cta" class="btn-wa-lg" aria-label="Contanos tu idea por WhatsApp">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+      Contanos tu idea
+    </a>
+  </div>
+</section>
+
+<section data-block="2" aria-label="La obra">
+  <span class="kicker">02 · La obra</span>
+  <h2 class="section-title">Piezas <em>como proyecto,</em> no como catálogo</h2>
+  <p class="lede">Una manga no es un tatuaje: es un proyecto planificado. Cada ficha comunica el método —artista, zona, sesiones— porque el resultado depende de esas decisiones tanto como del dibujo.</p>
+  <div class="carousel" data-carousel="obra">
+    <div class="carousel-track">
+      {% set destacados = portfolio | where("destacadoHome", true) %}
+      {% for p in destacados %}{{ carouselSlide(p, loop.index0) }}{% endfor %}
+    </div>
+    <div class="carousel-nav">
+      <div class="dots" data-dots="obra"></div>
+      <span class="carousel-counter"><strong data-current="obra">01</strong> · <span data-total="obra">08</span></span>
+    </div>
+  </div>
+  <a href="/portfolio/" class="section-out">Ver portfolio completo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<!--
+Comentado 14-jul-2026 (Sesión 14): sin material día-1/8-semanas para armar el comparativo real.
+No borrar — retomar cuando haya pares de fotos curados (ver pendiente en sesiones.md, Sesión 12/13).
+Reemplazado por bloque de 4 videos de proceso + trabajo terminado (pedido de Armelio).
+
+<section data-block="3" aria-label="Trabajos cicatrizados">
+  <span class="kicker">03 · Trabajos cicatrizados</span>
+  <h2 class="section-title">Cómo va a estar tu tatuaje <em>a las ocho semanas</em></h2>
+  <p class="lede">Un tatuaje recién terminado siempre se ve bien: la tinta está fresca y el contraste al máximo. La evaluación real es a las seis u ocho semanas, cuando la piel terminó de regenerarse. Ahí se ve si la línea mantuvo su definición, si los grises asentaron parejos, si el negro satura sin manchas.</p>
+  <p class="lede">Por eso publicamos nuestros trabajos cicatrizados junto a la foto del día de la sesión: es la única forma honesta de mostrar cómo va a estar tu tatuaje dentro de diez años.</p>
+  <div class="compare" data-compare aria-label="Slider comparativo: día de la sesión vs. ocho semanas después">
+    <div class="compare-side after" aria-hidden="true"><span class="compare-label after">Cicatrizado · 8 sem</span></div>
+    <div class="compare-side before" data-compare-before aria-hidden="true"><span class="compare-label before">Día de la sesión</span></div>
+    <div class="compare-handle" data-compare-handle></div>
+    <div class="compare-knob" data-compare-knob aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M8 5l-6 7 6 7M16 5l6 7-6 7"/></svg></div>
+  </div>
+  <div class="compare-meta"><span>Realismo · Antebrazo · <span class="num">1</span> sesión</span><span>Armelio</span></div>
+  <div class="compare-hint">← Arrastrá para comparar →</div>
+  <a href="/portfolio/?estado=cicatrizado" class="section-out">Ver más cicatrizados <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</section>
+-->
+
+<section data-block="3" aria-label="Proceso en estudio">
+  <span class="kicker">04 · Proceso en estudio</span>
+  <h2 class="section-title">Ver <em>cómo</em> se hace, no solo el resultado</h2>
+  <p class="lede">Una foto terminada no muestra el pulso de la aguja, el tiempo real de una sesión ni cómo se prepara la piel antes de tatuar. Estos clips son proceso real de estudio, grabados en sesión: sin edición de agencia.</p>
+  <div class="grid" data-video-grid>
+    {% for v in videos %}
+    <div class="grid-card video-card" data-video-card>
+      <div class="ph">
+        {% if v.video %}
+        <video class="ph-img" data-video-el src="{{ v.video }}"{% if v.poster %} poster="{{ v.poster }}"{% endif %} muted loop playsinline preload="metadata"></video>
+        <button class="video-sound-toggle" data-video-toggle type="button" aria-label="Activar sonido">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path data-mute-line d="M23 9 17 15M17 9l6 6"/></svg>
+          <span data-video-toggle-label>Sonido</span>
+        </button>
+        {% else %}
+        <span class="ph-label">{{ v.titulo }}</span>
+        {% endif %}
+        <span class="status-tag{{ ' done' if v.categoria == 'terminado' else '' }}">{{ 'Terminado' if v.categoria == 'terminado' else 'Proceso' }}</span>
+      </div>
+      <div class="card-meta">
+        <div class="row"><span>{{ v.titulo }}</span>{% if v.artista %}<strong>{{ v.artista }}</strong>{% endif %}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <a href="https://instagram.com/inkuba_tattoo_studio" target="_blank" rel="noopener" class="section-out">Ver más en Instagram <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<section data-block="5" aria-label="Armelio y equipo">
+  <span class="kicker">05 · El equipo</span>
+  <h2 class="section-title">Un artista <em>por proyecto</em></h2>
+  <p class="lede">Cada idea que entra al estudio pasa por la evaluación de Armelio. Él decide quién ejecuta la pieza —él mismo, Lyvan o Macerll— según lo que la obra pida.</p>
+  <div class="team">
+    <a href="/artistas/armelio/" class="team-card lead">
+      <div class="ph v3">{% if artistas.armelio.imagen %}<img class="ph-img" src="{{ artistas.armelio.imagen }}" alt="{{ artistas.armelio.nombre }}" loading="lazy">{% else %}<span class="ph-label">{{ artistas.armelio.nombre }}</span>{% endif %}</div>
+      <div class="role">{{ artistas.armelio.rol }}</div>
+      <div class="name">{{ artistas.armelio.nombre }}</div>
+      <p>{{ artistas.armelio.bioCorta }}</p>
+      <span class="link">Ver perfil completo <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+    </a>
+    <div class="team-secondary">
+      <a href="/artistas/lyvan/" class="team-card">
+        <div class="ph v2">{% if artistas.lyvan.imagen %}<img class="ph-img" src="{{ artistas.lyvan.imagen }}" alt="{{ artistas.lyvan.nombre }}" loading="lazy">{% else %}<span class="ph-label">{{ artistas.lyvan.nombre }}</span>{% endif %}</div>
+        <div class="role">{{ artistas.lyvan.rol }}</div><div class="name">{{ artistas.lyvan.nombre }}</div>
+        <p>{{ artistas.lyvan.bioCorta }}</p>
+        <span class="link">Perfil <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </a>
+      <a href="/artistas/macerll/" class="team-card">
+        <div class="ph v4">{% if artistas.macerll.imagen %}<img class="ph-img" src="{{ artistas.macerll.imagen }}" alt="{{ artistas.macerll.nombre }}" loading="lazy">{% else %}<span class="ph-label">{{ artistas.macerll.nombre }}</span>{% endif %}</div>
+        <div class="role">{{ artistas.macerll.rol }}</div><div class="name">{{ artistas.macerll.nombre }}</div>
+        <p>{{ artistas.macerll.bioCorta }}</p>
+        <span class="link">Perfil <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section data-block="6" class="works" aria-label="Cómo trabajamos" id="como-trabajamos">
+  <div class="works-col">
+  <span class="kicker">06 · Cómo trabajamos</span>
+  <h2 class="section-title">Cinco pasos, <em>en este orden</em></h2>
+  <p class="lede">Sin catálogo, sin plantillas y sin apuros. El diseño ocurre antes de la primera aguja.</p>
+  <div class="steps" data-stepper>
+    <div class="step active" data-step="1"><div class="marker">1</div><div class="step-title"><span class="st-label">Escribís, <em>respondemos en 24hs</em></span><span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div><p>Nos escribís por WhatsApp con la idea, la zona y referencias si tenés. Respondemos en menos de 24 horas.</p></div>
+    <div class="step collapsed" data-step="2"><div class="marker">2</div><div class="step-title"><span class="st-label">Evaluamos — y <em>te podemos decir que no</em></span><span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div><p>Armelio evalúa el proyecto: viabilidad en la zona, escala, cantidad estimada de sesiones. Si tu idea no va a funcionar —por la zona, por la escala, porque va a envejecer mal— te lo decimos y te proponemos alternativas. Recibís una cotización concreta, sin compromiso.</p></div>
+    <div class="step collapsed" data-step="3"><div class="marker">3</div><div class="step-title"><span class="st-label">Diseño <em>original</em>, antes de la aguja</span><span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div><p>Con la seña se reserva la fecha y se dibuja el diseño original sobre tu anatomía. Acá no hay catálogo ni plantillas: son horas de trabajo que ocurren antes de la primera aguja y no se facturan por separado. El diseño se ajusta con vos antes de tatuar.</p></div>
+    <div class="step collapsed" data-step="4"><div class="marker">4</div><div class="step-title"><span class="st-label">Un turno por vez, <em>sin cortar por reloj</em></span><span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div><p>Estudio privado, un turno por vez, materiales descartables de un solo uso. Una sesión estándar se planifica en cuatro horas de trabajo corrido; si la pieza pide más, se trabaja hasta terminarla —un tatuaje no se corta donde suena el reloj.</p></div>
+    <div class="step collapsed" data-step="5"><div class="marker">5</div><div class="step-title"><span class="st-label">Cicatrización con <em>90 días de garantía</em></span><span class="chev"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div><p>Te llevás los cuidados por escrito. Revisión a las 6-8 semanas y retoque sin costo hasta los 90 días si hace falta.</p></div>
+  </div>
+  <div class="stepper-cta"><a href="#cta" class="btn-wa-lg" aria-label="Contanos tu idea por WhatsApp">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+    Contanos tu idea
+  </a></div>
+  </div>
+  <figure class="works-media" aria-hidden="true">
+    <video src="/assets/video/estudio/estudio.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </figure>
+</section>
+
+<section data-block="7" class="ubicacion" aria-label="Dónde estamos">
+  <span class="kicker">07 · Dónde estamos</span>
+  <h2 class="section-title">En el corazón de <em>Caballito</em></h2>
+  <div class="ubi-grid">
+    <div class="ubi-map">
+      <iframe src="https://www.google.com/maps?q=Rauch%203974,%20CABA,%20Argentina&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de InKuba — Rauch 3974, CABA"></iframe>
+    </div>
+    <div class="ubi-info">
+      <div class="studio-address">
+        <div class="row"><span>Dirección</span><strong>Rauch 3974, CABA</strong></div>
+        <div class="row"><span>Barrio</span><strong>Caballito / Almagro</strong></div>
+        <div class="row"><span>Subte</span><strong>Línea B</strong></div>
+        <div class="row"><span>Turnos</span><strong>Con cita previa</strong></div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Rauch+3974,+CABA,+Argentina" target="_blank" rel="noopener" class="btn-wa-lg ubi-btn" aria-label="Cómo llegar al estudio en Google Maps">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Cómo llegar
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="invest" data-block="8" aria-label="Inversión y garantía">
+  <span class="kicker">08 · Inversión y garantía</span>
+  <h2 class="section-title">Precio claro, <em>respaldo real</em></h2>
+  <div class="ig-cards">
+    <div class="ig-card">
+      <span class="ig-eyebrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 8V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3"/><path d="M3 12h7m0 0-3-3m3 3-3 3"/></svg> Cómo cotizamos</span>
+      <span class="ig-num">24 hs</span>
+      <span class="ig-sub">cotización gratis, sin compromiso</span>
+      <ul class="ig-list">
+        <li>Sin tarifario: el precio es por proyecto —escala, zona, detalle y sesiones.</li>
+        <li>El turno se reserva con una seña.</li>
+        <li>Al comparar precios por sesión, preguntá cuánto dura: acá son cuatro horas corridas hasta terminar.</li>
+      </ul>
+    </div>
+    <div class="ig-card">
+      <span class="ig-eyebrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg> Tu garantía</span>
+      <span class="ig-num">90 días</span>
+      <span class="ig-sub">de revisión y retoque sin costo</span>
+      <ul class="ig-list">
+        <li>Retoque de cicatrización sin cargo durante los primeros 90 días.</li>
+        <li>Evaluamos la pieza entre la sexta y la octava semana —foto por WhatsApp o en el estudio.</li>
+        <li>Respondemos por la pieza terminada, no por la foto del día uno.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ig-cta">
+    <p class="ig-foot">Mandanos tu idea con la zona y una referencia. En menos de 24 horas tenés una cotización concreta, sin cargo y sin compromiso.</p>
+    <a href="#cta" class="btn-wa-lg" aria-label="Pedí tu cotización por WhatsApp">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+      Pedí tu cotización
+    </a>
+  </div>
+</section>
+
+<section data-block="9" aria-label="Reseñas">
+  <div class="reviews-head">
+    <div><span class="kicker" style="margin-bottom:8px;">09 · Reseñas</span><h2 class="section-title">Lo que <em>escriben</em></h2></div>
+    <div class="reviews-badge"><svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="stars">★★★★★</span><span class="num">4.9</span><span class="muted">41 reseñas</span></div>
+  </div>
+  <div class="reviews-grid">
+    <article class="rv-card"><div class="rv-head"><span class="rv-avatar" style="--c:#db4437">S</span><span class="rv-name">Sara Vedoya</span><svg class="g-logo sm" viewBox="0 0 48 48" aria-label="Reseña de Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><span class="rv-stars" aria-label="5 de 5 estrellas">★★★★★</span><blockquote class="rv-text">&ldquo;Mi experiencia fue 10/10. Calidez, atención, diseño, dedicación e higiene. Necesitaba arreglar un tatuaje muyyy mal logrado que me hice en otro estudio…&rdquo;</blockquote></article>
+    <article class="rv-card"><div class="rv-head"><span class="rv-avatar" style="--c:#4285f4">M</span><span class="rv-name">Misha El Dinosaurio</span><svg class="g-logo sm" viewBox="0 0 48 48" aria-label="Reseña de Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><span class="rv-stars" aria-label="5 de 5 estrellas">★★★★★</span><blockquote class="rv-text">&ldquo;Llegué sin tatuajes para hacerme el primero y ya llevo 5, simplemente perfectos.&rdquo;</blockquote></article>
+    <article class="rv-card"><div class="rv-head"><span class="rv-avatar" style="--c:#0f9d58">F</span><span class="rv-name">Fran Guzzo</span><svg class="g-logo sm" viewBox="0 0 48 48" aria-label="Reseña de Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><span class="rv-stars" aria-label="5 de 5 estrellas">★★★★★</span><blockquote class="rv-text">&ldquo;Lyvan entendió a la perfección lo que quería y me armó un diseño espectacular. Quedó mejor de lo que esperaba.&rdquo;</blockquote></article>
+    <article class="rv-card"><div class="rv-head"><span class="rv-avatar" style="--c:#f4b400">A</span><span class="rv-name">Arevalo Asuaje</span><svg class="g-logo sm" viewBox="0 0 48 48" aria-label="Reseña de Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><span class="rv-stars" aria-label="5 de 5 estrellas">★★★★★</span><blockquote class="rv-text">&ldquo;Armelio es un genio del tatuaje negro y gris.&rdquo;</blockquote></article>
+    <article class="rv-card"><div class="rv-head"><span class="rv-avatar" style="--c:#ab47bc">M</span><span class="rv-name">MOLFO A9</span><svg class="g-logo sm" viewBox="0 0 48 48" aria-label="Reseña de Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><span class="rv-stars" aria-label="5 de 5 estrellas">★★★★★</span><blockquote class="rv-text">&ldquo;Se toman su tiempo con vos para crear el diseño según tu idea.&rdquo;</blockquote></article>
+    <article class="rv-card"><div class="rv-head"><span class="rv-avatar" style="--c:#00acc1">C</span><span class="rv-name">Cliente</span><svg class="g-logo sm" viewBox="0 0 48 48" aria-label="Reseña de Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><span class="rv-stars" aria-label="5 de 5 estrellas">★★★★★</span><blockquote class="rv-text">&ldquo;Sesión larga, todo tranquilo. Se nota el trabajo de composición antes de tatuar. La pieza cicatrizó pareja.&rdquo;</blockquote></article>
+  </div>
+  <a href="https://g.page/inkuba" class="section-out">Ver todas en Google <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<section data-block="10" class="faq" aria-label="Preguntas frecuentes" id="faq">
+  <figure class="faq-media" aria-hidden="true">
+    <img src="/assets/img/portfolio/cara-mediamanga-2.webp" alt="Pieza de realismo de InKuba" loading="lazy">
+  </figure>
+  <div class="faq-wrap">
+  <span class="kicker">10 · Preguntas frecuentes</span>
+  <h2 class="section-title">Antes <em>de escribirnos</em></h2>
+  <details class="faq-item"><summary><span class="q">¿Quiénes tatúan en InKuba y cómo trabajan?</span><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a"><p>InKuba es un estudio especializado en realismo en blanco y negro, con un equipo de artistas que se complementan entre sí. Armelio Torres es el más experimentado —más de 10 años y más de 500 piezas terminadas— y trabaja junto a tatuadores dedicados al mismo lenguaje realista. Según tu proyecto, su escala y su complejidad, definimos qué artista es el indicado: elegimos el artista para la pieza, no al revés.</p><p>Pero lo que define al estudio no es solo quién sostiene la aguja, sino cómo acompañamos todo el recorrido. Te asesoramos desde el día cero: escuchamos tu idea, diseñamos el arte hasta llegar a la pieza exacta que tenés en mente, la tatuamos en una o varias sesiones según lo que requiera, y después hacemos el seguimiento de cuidados y cicatrización hasta que asienta. Del primer mensaje al último retoque, todo el proceso pasa por el estudio.</p></div></details>
+  <details class="faq-item"><summary><span class="q">¿Qué estilo de tatuaje hacen?</span><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a"><p>Nos especializamos en realismo hiperrealista en blanco y negro (black &amp; grey): retratos, figuras, composiciones alegóricas y mangas. No hacemos de todo un poco. Trabajar un solo lenguaje durante años es lo que permite lograr los grises, las texturas y la profundidad que un tatuaje realista necesita para verse bien el día uno y para envejecer bien con los años.</p></div></details>
+  <details class="faq-item"><summary><span class="q">¿Cómo son las sesiones en el estudio?</span><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a"><p>Trabajamos de a un cliente por vez, en jornadas de un día completo —planificadas en cuatro horas de trabajo corrido, y si la pieza lo pide, hasta terminarla. El estudio es privado: no compartís la sala ni esperás tu turno entre otras personas. Eso da concentración total en tu pieza y una experiencia tranquila, incluso si es tu primer trabajo grande.</p></div></details>
+  <details class="faq-item"><summary><span class="q">¿Con cuánta anticipación tengo que reservar?</span><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a"><p>Tomamos pocos turnos por mes. Al trabajar de a una pieza por vez y en jornadas completas, la agenda es acotada y suele haber lista de espera. No es una estrategia de marketing: es la consecuencia de no apurar ningún trabajo. Si tenés una fecha en mente, escribinos con tiempo —cuanto antes definamos el proyecto, antes entrás en agenda.</p></div></details>
+  <details class="faq-item"><summary><span class="q">¿El diseño es original o eligen de un catálogo?</span><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a"><p>Cada pieza se diseña desde cero para vos, sobre tu idea y adaptada a la zona del cuerpo donde va. No tatuamos diseños de catálogo ni repetimos trabajos. Las horas de diseño y de composición sobre tu anatomía no se cobran aparte: son parte de hacer las cosas bien. Ves la propuesta antes de que la aguja toque la piel.</p></div></details>
+  <details class="faq-item"><summary><span class="q">¿Los tatuajes tienen garantía?</span><span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a"><p>Sí. Todos los trabajos incluyen revisión y retoque de cicatrización sin costo durante los primeros 90 días desde la última sesión. Si una línea perdió definición o un área no asentó pareja, se corrige. Respondemos por la pieza terminada, no por la foto del día uno —y podés ver nuestros trabajos ya cicatrizados, no solo recién hechos.</p></div></details>
+  <a href="/faq/" class="section-out">Ver todas las preguntas <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<section id="cta" class="cta-final" data-block="11" aria-label="Contanos tu idea">
+  <div class="cta-media" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <span class="kicker">11 · Contanos tu idea</span>
+    <h2>Tu próxima pieza <em>empieza con un mensaje</em></h2>
+    <p class="cta-lede">Cotización concreta en menos de 24 horas. Sin cargo y sin compromiso.</p>
+    <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20de%20la%20web%20de%20InKuba" class="btn-wa-lg cta-final-btn" aria-label="Contanos tu idea por WhatsApp">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+      Contanos tu idea
+    </a>
+    <p class="cta-micro">Mandás tu idea, la zona y una referencia · Te respondemos con una propuesta, y si algo no va a funcionar, te lo decimos.</p>
+  </div>
+</section>

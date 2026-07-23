@@ -1,0 +1,119 @@
+---
+layout: layouts/base.html
+title: "Portfolio — InKuba Tatto&Art Studio"
+description: "Piezas de realismo y black & grey terminadas y documentadas. Filtrá por estilo, zona, artista, tipo y estado (recién hecho o cicatrizado)."
+permalink: /portfolio/
+---
+{% from "macros/grid-card.html" import gridCard %}
+<section class="page-hero" aria-label="Portfolio — encabezado">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Inicio</a><span class="sep">/</span><span class="current">Portfolio</span>
+  </nav>
+  <span class="page-kicker">Portfolio · Archivo</span>
+  <h1 class="page-title">Todas las <em>piezas</em></h1>
+  <p class="page-lede">Piezas terminadas y documentadas. Cada ficha comunica método —artista, zona, sesiones— y estado: recién hecha o cicatrizada a las ocho semanas.</p>
+</section>
+
+<div class="filter-bar" aria-label="Filtros del portfolio">
+  <div class="filter-top">
+    <span class="count"><strong data-visible>{{ portfolio | length }}</strong> piezas</span>
+    <button class="filters-btn" data-open-drawer aria-label="Abrir todos los filtros">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+      Filtros
+      <span class="badge" data-active-count>0</span>
+    </button>
+  </div>
+  <div class="chips-row" role="tablist" aria-label="Filtros rápidos por estado">
+    <button class="chip active" data-quick="todo">Todo <span class="count-num">{{ portfolio | length }}</span></button>
+    <button class="chip" data-quick="cicatrizado">Cicatrizado <span class="count-num">{{ (portfolio | where("estado","cicatrizado")) | length }}</span></button>
+    <button class="chip" data-quick="reciente">Reciente <span class="count-num">{{ (portfolio | where("estado","reciente")) | length }}</span></button>
+    <button class="chip" data-quick="gran-formato">Gran formato <span class="count-num">{{ (portfolio | whereTag("gran-formato")) | length }}</span></button>
+    <button class="chip" data-quick="cover-up">Cover-up <span class="count-num">{{ (portfolio | whereTag("cover-up")) | length }}</span></button>
+    <button class="chip" data-quick="primer-tatuaje">Primer tatuaje <span class="count-num">{{ (portfolio | whereTag("primer-tatuaje")) | length }}</span></button>
+  </div>
+  <div class="applied-row" aria-label="Filtros aplicados"></div>
+</div>
+
+<section class="grid-section" aria-label="Cuadrícula de piezas">
+  <div class="grid">
+    {% for p in portfolio %}{{ gridCard(p, loop.index0) }}{% endfor %}
+  </div>
+  <div class="load-more-wrap">
+    <span class="load-more-hint">Mostrando <strong>{{ portfolio | length }}</strong> de <strong>{{ portfolio | length }}</strong></span>
+  </div>
+</section>
+
+<section class="cta-compact" id="cta" aria-label="Contanos tu idea">
+  <span class="kicker">Contanos tu idea</span>
+  <h2>¿Ninguna pieza <em>del portfolio</em>?</h2>
+  <p>El portfolio muestra trabajos ya terminados. Tu proyecto se dibuja desde cero, sobre tu anatomía, con la composición que la idea pida. Mandanos la idea, la zona y las referencias que tengas.</p>
+  <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20del%20portfolio%20de%20InKuba" class="cta-primary" aria-label="Abrir WhatsApp">
+    Contanos tu idea
+    <span class="cta-icon">WhatsApp <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+  </a>
+</section>
+
+<div class="drawer-backdrop" data-drawer-backdrop aria-hidden="true"></div>
+<aside class="drawer" data-drawer role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+  <div class="handle" aria-hidden="true"></div>
+  <h3 id="drawer-title">Filtrar <em>portfolio</em></h3>
+  <p class="drawer-sub">Cinco ejes · Combinables</p>
+
+  <div class="drawer-group">
+    <div class="group-label"><span>Estilo</span><span class="helper">Elegí uno o varios</span></div>
+    <div class="options">
+      <button class="chip">Realismo <span class="count-num">{{ (portfolio | where("estilo","Realismo")) | length }}</span></button>
+      <button class="chip">Black &amp; grey <span class="count-num">{{ (portfolio | where("estilo","Black & grey")) | length }}</span></button>
+      <button class="chip">Alegórico <span class="count-num">{{ (portfolio | where("estilo","Alegórico")) | length }}</span></button>
+      <button class="chip">Lineal <span class="count-num">{{ (portfolio | where("estilo","Lineal")) | length }}</span></button>
+      <button class="chip">Retrato animal <span class="count-num">{{ (portfolio | where("estilo","Retrato animal")) | length }}</span></button>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <div class="group-label"><span>Zona del cuerpo</span></div>
+    <div class="options">
+      <button class="chip">Antebrazo <span class="count-num">{{ (portfolio | whereContains("zona","antebrazo")) | length }}</span></button>
+      <button class="chip">Brazo completo <span class="count-num">{{ (portfolio | whereContains("zona","brazo completo")) | length }}</span></button>
+      <button class="chip">Espalda <span class="count-num">{{ (portfolio | whereContains("zona","espalda")) | length }}</span></button>
+      <button class="chip">Muslo <span class="count-num">{{ (portfolio | whereContains("zona","muslo")) | length }}</span></button>
+      <button class="chip">Pecho <span class="count-num">{{ (portfolio | whereContains("zona","pecho")) | length }}</span></button>
+      <button class="chip">Costillas <span class="count-num">{{ (portfolio | whereContains("zona","costillas")) | length }}</span></button>
+      <button class="chip">Pantorrilla <span class="count-num">{{ (portfolio | whereContains("zona","pantorrilla")) | length }}</span></button>
+      <button class="chip">Muñeca / mano <span class="count-num">{{ (portfolio | whereContains("zona","muñeca")) | length }}</span></button>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <div class="group-label"><span>Artista</span></div>
+    <div class="options">
+      <button class="chip">Armelio <span class="count-num">{{ (portfolio | where("artistaSlug","armelio")) | length }}</span></button>
+      <button class="chip">Lyvan <span class="count-num">{{ (portfolio | where("artistaSlug","lyvan")) | length }}</span></button>
+      <button class="chip">Macerll <span class="count-num">{{ (portfolio | where("artistaSlug","macerll")) | length }}</span></button>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <div class="group-label"><span>Tipo</span></div>
+    <div class="options">
+      <button class="chip">Gran formato <span class="count-num">{{ (portfolio | whereTag("gran-formato")) | length }}</span></button>
+      <button class="chip">Cover-up <span class="count-num">{{ (portfolio | whereTag("cover-up")) | length }}</span></button>
+      <button class="chip">Primer tatuaje <span class="count-num">{{ (portfolio | whereTag("primer-tatuaje")) | length }}</span></button>
+      <button class="chip">Manga completa <span class="count-num">{{ (portfolio | whereTag("manga-completa")) | length }}</span></button>
+      <button class="chip">Sesión única <span class="count-num">{{ (portfolio | where("sesiones", 1)) | length }}</span></button>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <div class="group-label"><span>Estado</span><span class="helper">Recomendado: cicatrizado</span></div>
+    <div class="options">
+      <button class="chip">Cicatrizado (8+ semanas) <span class="count-num">{{ (portfolio | where("estado","cicatrizado")) | length }}</span></button>
+      <button class="chip">Reciente (foto del día) <span class="count-num">{{ (portfolio | where("estado","reciente")) | length }}</span></button>
+    </div>
+  </div>
+
+  <div class="drawer-footer">
+    <button class="reset">Resetear</button>
+    <button class="apply">Ver piezas <span class="count-num">{{ portfolio | length }}</span></button>
+  </div>
+</aside>
