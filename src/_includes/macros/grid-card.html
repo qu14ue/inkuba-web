@@ -1,7 +1,12 @@
 {% macro gridCard(p, index) %}
 {% set variants = ["", "v2", "v3", "v4", "v5", "v6"] %}
 {% set v = variants[index % 6] %}
-<div class="grid-card" data-lightbox-trigger tabindex="0" role="button">
+<div class="grid-card" data-lightbox-trigger tabindex="0" role="button"
+  data-parte="{{ p.parte }}"
+  data-estilo="{{ p.estilo | lower }}"
+  data-tematica="{{ p.tematica | join(' ') }}"
+  data-artista="{{ p.artistaSlug }}"
+  data-tipo="{{ p.tipo | join(' ') }}">
   <div class="ph {{ v }}">
     {% if p.imagen %}<img class="ph-img" src="{{ p.imagen }}" alt="{{ p.titulo }}" loading="lazy">{% endif %}
     {% if p.estado == "cicatrizado" %}<span class="status-tag cicatrizado">Cicatrizado{% if p.semanas %} · {{ p.semanas }} sem{% endif %}</span>{% else %}<span class="status-tag">Reciente</span>{% endif %}

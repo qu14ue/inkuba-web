@@ -13,6 +13,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("whereTag", (arr, tag) =>
     (arr || []).filter((item) => (item.tipo || []).includes(tag))
   );
+  // Genérico para campos que son array (tematica, tipo, ...)
+  eleventyConfig.addFilter("whereHas", (arr, key, tag) =>
+    (arr || []).filter((item) => (item[key] || []).includes(tag))
+  );
   eleventyConfig.addFilter("whereContains", (arr, key, needle) =>
     (arr || []).filter((item) =>
       String(item[key] || "").toLowerCase().includes(String(needle).toLowerCase())
