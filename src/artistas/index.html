@@ -1,53 +1,70 @@
 ---
 layout: layouts/base.html
 title: "Artistas — InKuba Tatto&Art Studio"
-description: "Armelio, Lyvan y Macerll. Un artista por proyecto, según lo que la obra pida."
+description: "Armelio, Lyvan y Macerll. Realismo black & grey en Buenos Aires. Un artista por proyecto, según lo que la obra pida."
 permalink: /artistas/
 ---
-{% set piezasArmelio = portfolio | where("artistaSlug", "armelio") %}
-{% set piezasLyvan = portfolio | where("artistaSlug", "lyvan") %}
-{% set piezasMacerll = portfolio | where("artistaSlug", "macerll") %}
 <section class="page-hero" aria-label="Artistas — encabezado">
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Inicio</a><span class="sep">/</span><span class="current">Artistas</span>
   </nav>
   <span class="page-kicker">El estudio · Artistas</span>
-  <h1 class="page-title">Un artista <em>por proyecto</em></h1>
+  <h1 class="page-title">Tres artistas, <em>un estándar</em></h1>
   <p class="page-lede">Cada idea que entra al estudio pasa por la evaluación de Armelio. Él decide quién la ejecuta —él mismo, Lyvan o Macerll— según lo que la obra pida.</p>
 </section>
 
-<section data-block="team" aria-label="Equipo completo">
-  <div class="team">
-    <a href="/artistas/armelio/" class="team-card lead">
-      <div class="ph v3"><span class="ph-label">{{ artistas.armelio.nombre }}</span></div>
-      <div class="role">{{ artistas.armelio.rol }}</div>
-      <div class="name">{{ artistas.armelio.nombre }}</div>
-      <p>{{ artistas.armelio.bioCorta }}</p>
-      <span class="link">Ver perfil completo <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+<section class="artists-index" aria-label="Índice de artistas">
+  {% for slug in ["armelio", "lyvan", "macerll"] %}
+  {% set a = artistas[slug] %}
+  {% set piezas = portfolio | where("artistaSlug", slug) %}
+  <article class="artist-block{% if loop.index0 % 2 %} rev{% endif %}">
+    <a class="artist-portrait" href="/artistas/{{ slug }}/" aria-label="Ver perfil de {{ a.nombre }}">
+      <div class="ph">
+        {% if a.imagen %}<img class="ph-img" src="{{ a.imagen }}" alt="{{ a.nombre }}" loading="lazy">{% else %}<span class="ph-label">{{ a.nombre }}</span>{% endif %}
+      </div>
+      <span class="artist-role">{{ a.rol }}</span>
     </a>
-    <div class="team-secondary">
-      <a href="/artistas/lyvan/" class="team-card">
-        <div class="ph v2"><span class="ph-label">{{ artistas.lyvan.nombre }}</span></div>
-        <div class="role">{{ artistas.lyvan.rol }}</div><div class="name">{{ artistas.lyvan.nombre }}</div>
-        <p>{{ artistas.lyvan.bioCorta }}</p>
-        <span class="link">Perfil <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-      </a>
-      <a href="/artistas/macerll/" class="team-card">
-        <div class="ph v4"><span class="ph-label">{{ artistas.macerll.nombre }}</span></div>
-        <div class="role">{{ artistas.macerll.rol }}</div><div class="name">{{ artistas.macerll.nombre }}</div>
-        <p>{{ artistas.macerll.bioCorta }}</p>
-        <span class="link">Perfil <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+    <div class="artist-body">
+      <h2 class="artist-name">{{ a.nombreCompleto or a.nombre }}</h2>
+      <div class="artist-chips">
+        {% for e in a.estilos %}<span class="chip est">{{ e }}</span>{% endfor %}
+        {% for t in a.tematicas %}<span class="chip tem">{{ t }}</span>{% endfor %}
+      </div>
+      <p class="artist-bio">{{ a.bioIndex or a.bioCorta }}</p>
+      <a class="artist-link" href="/artistas/{{ slug }}/">Ver perfil de {{ a.nombre }}
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
-  </div>
+    {% if piezas | length %}
+    <div class="artist-works" aria-label="Trabajos de {{ a.nombre }}">
+      {% for p in piezas.slice(0, 3) %}
+      <div class="work" data-lightbox-trigger tabindex="0" role="button" aria-label="Ampliar: {{ p.titulo }}">
+        <div class="ph">
+          {% if p.imagen %}<img class="ph-img" src="{{ p.imagen }}" alt="{{ p.titulo }}" loading="lazy">{% endif %}
+          {% if p.estado == "cicatrizado" %}<span class="status-tag cicatrizado">Cicatrizado{% if p.semanas %} · {{ p.semanas }} sem{% endif %}</span>{% endif %}
+        </div>
+        <span class="work-cap card-title">{{ p.titulo }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="artist-works-out" href="/portfolio/?artista={{ slug }}">Ver {{ "la" if piezas | length == 1 else "las" }} {{ piezas | length }} pieza{{ "" if piezas | length == 1 else "s" }} de {{ a.nombre }}
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    {% endif %}
+  </article>
+  {% endfor %}
 </section>
 
-<section class="cta-compact" id="cta" aria-label="Contanos tu idea">
-  <span class="kicker">Contanos tu idea</span>
-  <h2>¿No sabés con <em>quién arrancar</em>?</h2>
-  <p>Contanos la idea, la zona del cuerpo y las referencias que tengas. Armelio la evalúa y te dice quién del equipo la ejecuta.</p>
-  <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Artistas%20de%20InKuba" class="cta-primary" aria-label="Abrir WhatsApp">
-    Contanos tu idea
-    <span class="cta-icon">WhatsApp <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-  </a>
+<section id="cta" class="cta-final" aria-label="Contanos tu idea">
+  <div class="cta-media" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <span class="kicker">CONTANOS TU IDEA</span>
+    <h2>Tu idea, <em>en las manos indicadas</em></h2>
+    <p class="cta-lede">Contanos qué querés hacer y en qué zona. Armelio evalúa el proyecto y define quién del equipo lo ejecuta.</p>
+    <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Artistas%20de%20InKuba" class="btn-wa-lg cta-final-btn" aria-label="Contanos tu idea por WhatsApp">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+      Contanos tu idea
+    </a>
+    <p class="cta-micro">Mandanos la idea, la zona y las referencias que tengas · Te respondemos con una propuesta en menos de 24hs.</p>
+  </div>
 </section>

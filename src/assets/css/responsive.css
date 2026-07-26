@@ -204,3 +204,53 @@
      de texto para que quede en el tercio inferior, no en el borde. */
   .hero-body { bottom: 120px; }
 }
+
+/* ===== /artistas — índice editorial (Opción A): tablet+ ===== */
+@media (min-width: 768px) {
+  .artists-index { padding-left: var(--edge-pad); padding-right: var(--edge-pad); }
+  .artist-block {
+    display: grid; grid-template-columns: 280px 1fr;
+    grid-template-areas: "portrait body" "works works" "out out";
+    column-gap: 44px; row-gap: 26px; align-items: start; padding: 52px 0;
+  }
+  .artist-block.rev {
+    grid-template-columns: 1fr 280px;
+    grid-template-areas: "body portrait" "works works" "out out";
+  }
+  .artist-portrait { grid-area: portrait; max-width: none; }
+  .artist-body { grid-area: body; align-self: start; }
+  .artist-works { grid-area: works; gap: 14px; }
+  .artist-works-out { grid-area: out; justify-self: start; }
+  .artist-name { font-size: 40px; }
+}
+@media (min-width: 1024px) {
+  .artist-block { grid-template-columns: 340px 1fr; column-gap: 60px; padding: 76px 0; }
+  .artist-block.rev { grid-template-columns: 1fr 340px; }
+  .artist-name { font-size: 52px; }
+  .artist-bio { font-size: 15px; }
+  .artist-chips .chip { font-size: 11px; }
+  .artist-works { gap: 18px; }
+  .work-cap { font-size: 11px; }
+}
+
+/* ===== Página de artista — bio a dos columnas en desktop ===== */
+@media (min-width: 1024px) {
+  .bio-block .bio-grid { display: grid; grid-template-columns: 0.82fr 1fr; gap: 56px; align-items: start; }
+  .bio-media { max-width: none; }
+  .bio-block .bio-copy { max-width: none; }
+}
+
+/* ===== Página de artista — entrevista a dos columnas en desktop ===== */
+@media (min-width: 1024px) {
+  .video-block .video-grid { display: grid; grid-template-columns: 1fr 400px; gap: 64px; align-items: start; }
+  .video-copy { max-width: var(--reading); }
+  .video-copy .pull-quote { font-size: 26px; }
+  .video-media { max-width: none; display: flex; justify-content: center; }
+  .video-media video { width: auto; height: 600px; max-width: 100%; }
+}
+
+/* Títulos de columna (bio/video) — tamaño en desktop, a tono con el resto */
+@media (min-width: 1024px) {
+  .bio-copy h2.section-title,
+  .video-copy h2.section-title { font-size: 44px; }
+}
