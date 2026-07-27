@@ -2,7 +2,7 @@
   "armelio": {
     "slug": "armelio",
     "nombre": "Armelio",
-    "nombreCompleto": "Armelio Borges Torres",
+    "nombreCompleto": "Armelio Borges Navarro",
     "rol": "Fundador & director",
     "especialidad": "Black & grey · Realismo",
     "estilos": ["Realismo B&N", "Realismo color", "Gran formato"],
@@ -17,7 +17,7 @@
   "lyvan": {
     "slug": "lyvan",
     "nombre": "Lyvan",
-    "nombreCompleto": "Lyvyan Garcia",
+    "nombreCompleto": "Jorge Lyvan Ricardo Méndez",
     "rol": "Senior",
     "especialidad": "Realismo · Black & grey",
     "estilos": ["Realismo B&N", "Realismo color", "Lineal"],
@@ -32,9 +32,9 @@
   },
   "macerll": {
     "slug": "macerll",
-    "nombre": "Macerll",
-    "nombreCompleto": "Marcell Yusmeni",
-    "rol": "Junior",
+    "nombre": "Franco",
+    "nombreCompleto": "Franco Fernández",
+    "rol": "Semi Senior",
     "especialidad": "Piezas lineales",
     "estilos": ["Lineal", "Menor formato"],
     "tematicas": ["Alegoría"],
@@ -44,6 +44,6 @@
     "bioCorta": "Piezas lineales y de menor formato. Suele ser la entrada al estudio para quienes se hacen su primer tatuaje.",
     "bioIndex": "Se especializa en piezas lineales y de menor formato, con un trazo limpio y prolijo. Es la puerta de entrada al estudio para quienes se hacen su primer tatuaje, y trabaja bajo la supervisión de Armelio en cada proyecto que toma.",
     "datosPlaceholder": true,
-    "imagen": "/assets/img/artistas/macell.webp"
+    "imagen": "/assets/img/artistas/franco.webp"
   }
 }
