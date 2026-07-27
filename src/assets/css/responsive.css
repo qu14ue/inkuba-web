@@ -24,7 +24,6 @@
   main, .header, footer, .filter-bar, .mobile-menu { max-width: none; margin: 0; }
 
   section,
-  .header,
   footer,
   .warranty, .cta-final, .cta-compact, section[data-block="cta"],
   .bio-block, .page-hero, .grid-section {
@@ -79,21 +78,26 @@
     --container: 1180px;
     --reading: 680px;
     --edge-pad: max(64px, calc((100vw - var(--container)) / 2));
-    --header-h: 84px;
+    --header-h: 94px;
   }
 
-  /* Header: Logo — nav — CTA al final (orden estándar, CTA como acción final a la derecha) */
+  /* Navbar — píldora flotante: isologotipo — nav centrado — CTA a la derecha */
   .hamb { display: none; }
-  .header { padding-top: 18px; padding-bottom: 18px; justify-content: flex-start; gap: 40px; }
-  .brand { order: 1; }
-  .mobile-menu {
-    order: 2;
+  .nav-pill { max-width: var(--container); margin: 16px auto; height: 62px; padding: 0 12px 0 22px; gap: 16px; }
+  .brand-iso { height: 26px; }
+  .brand-name { font-size: 22px; }
+  .brand-tag { font-size: 8px; letter-spacing: .22em; }
+  .nav-links {
     position: static; transform: none; opacity: 1; pointer-events: auto;
-    flex-direction: row; align-items: center; gap: 28px;
-    background: none; border: 0; padding: 0; max-width: none; width: auto;
+    flex-direction: row; align-items: center; gap: 6px; margin: 0 auto;
+    background: none; border: 0; border-radius: 0; box-shadow: none; padding: 0;
+    backdrop-filter: none; -webkit-backdrop-filter: none;
   }
-  .mobile-menu a { border-top: 0; padding: 0; font-size: 13px; color: var(--fg-2); }
-  .header-right { order: 3; margin-left: auto; }
+  .nav-links a { position: relative; padding: 8px 16px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: #b9b7b2; transition: background .2s ease, color .2s ease; }
+  .nav-links a + a::before { content: ""; position: absolute; left: -3px; top: 50%; transform: translateY(-50%); width: 1px; height: 13px; background: var(--border-2); }
+  .nav-links a:hover { background: rgba(157,184,201,.12); color: var(--fg); }
+  .nav-links a[aria-current="page"] { background: rgba(157,184,201,.16); color: var(--fg); }
+  .nav-actions .btn-wa .wa-label { display: inline; }
 
   /* Ritmo vertical más generoso en secciones genéricas (las clases especiales conservan el suyo) */
   section { padding-top: 96px; padding-bottom: 96px; }

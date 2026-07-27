@@ -9,7 +9,7 @@
   "garantia": "Revisión y retoque sin costo, 90 días desde la última sesión.",
   "nav": [
     { "label": "Portfolio", "url": "/portfolio/" },
-    { "label": "Artistas", "url": "/artistas/armelio/" },
+    { "label": "Artistas", "url": "/artistas/" },
     { "label": "Cómo trabajamos", "url": "/#como-trabajamos" },
     { "label": "FAQ", "url": "/faq/" }
   ]
