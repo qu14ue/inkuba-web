@@ -1,55 +1,70 @@
 ---
 layout: layouts/base.html
 title: "Franco — Artista en InKuba Tatto&Art Studio"
-description: "Franco, tatuador en InKuba. Piezas lineales y de menor formato, entrada natural para primer tatuaje."
+description: "Franco, tatuador en InKuba. Piezas lineales y de menor formato, la entrada natural para tu primer tatuaje en Buenos Aires."
 permalink: /artistas/macerll/
 ---
 {% from "macros/grid-card.html" import gridCard %}
 {% set piezasFranco = portfolio | where("artistaSlug", "macerll") %}
-<nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="/">Inicio</a><span class="sep">/</span><a href="/artistas/">Artistas</a><span class="sep">/</span><span class="current">Franco</span>
-</nav>
+<section class="page-hero" aria-label="Franco — encabezado">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Inicio</a><span class="sep">/</span><a href="/artistas/">Artistas</a><span class="sep">/</span><span class="current">Franco</span>
+  </nav>
+  <span class="page-kicker">El estudio · Artista</span>
+  <h1 class="page-title">Franco <em>Fernández</em></h1>
+  <p class="page-lede">El tercer artista del estudio. Piezas lineales y de menor formato —la entrada natural para quienes se hacen su primer tatuaje.</p>
+</section>
 
-<section class="hero-artist" data-block="hero" aria-label="Franco — retrato y datos">
-  <div class="portrait" aria-hidden="true">
-    <span class="portrait-label">Retrato · Estudio</span>
-    <span class="portrait-caption">Rauch 3974<br>Buenos Aires</span>
-    <div class="hero-body">
-      <span class="role-line">Tatuador · Junior</span>
-      <h1 class="name">Franco</h1>
-      <span class="name-underline">Piezas lineales</span>
+<section class="bio-block" data-block="bio" aria-label="Bio de Franco">
+  <div class="bio-grid">
+    <div class="bio-media">
+      <img src="{{ artistas.macerll.imagen }}" alt="Franco, tatuador en InKuba" loading="lazy">
+    </div>
+    <div class="bio-copy">
+      <span class="kicker">Bio</span>
+      <h2 class="section-title">La entrada <em>natural</em></h2>
+      <p><span class="first-word">Franco</span> es el tercer artista incorporado a InKuba. Se especializa en piezas lineales y de menor formato, con un trazo limpio y prolijo, y suele ser la puerta de entrada para quienes se hacen su primer tatuaje en el estudio.</p>
+      <p>Trabaja bajo la supervisión de Armelio en cada proyecto que toma. Aun en las piezas más chicas se mantiene el mismo estándar del estudio: un diseño pensado sobre la anatomía de cada cliente y acompañamiento hasta después de la cicatrización.</p>
+      <p>Como en todo el estudio, cada idea pasa primero por la evaluación de Armelio, que define si el proyecto es para Franco según la escala y la complejidad que pida.</p>
+      <div class="artist-chips">
+        {% for e in artistas.macerll.estilos %}<span class="chip est">{{ e }}</span>{% endfor %}
+        {% for t in artistas.macerll.tematicas %}<span class="chip tem">{{ t }}</span>{% endfor %}
+      </div>
+
       <!-- Años / piezas / Instagram: datos de placeholder pedidos por el cliente para completar el diseño.
            Reemplazar por los reales de Franco antes de publicar (ver artistas.json, campo datosPlaceholder). -->
-      <div class="meta-row">
-        <div class="item"><strong>{{ artistas.macerll.anios }}+</strong><span>Años</span></div>
-        <span class="sep"></span>
-        <div class="item"><strong>{{ artistas.macerll.piezasTerminadas }}+</strong><span>Piezas</span></div>
-        <span class="sep"></span>
-        <div class="item"><strong>{{ piezasFranco | length }}</strong><span>En portfolio</span></div>
+      <div class="artist-stats">
+        <div class="stat"><span class="stat-num">{{ artistas.macerll.anios }}+</span><span class="stat-label">Años de oficio</span></div>
+        <div class="stat"><span class="stat-num">+{{ artistas.macerll.piezasTerminadas }}</span><span class="stat-label">Piezas terminadas</span></div>
+        <div class="stat"><span class="stat-num">{{ piezasFranco | length }}</span><span class="stat-label">En portfolio</span></div>
       </div>
-      <a class="ig-line" href="{{ artistas.macerll.instagram }}" aria-label="Instagram de Franco">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
-        @macerll_tattoo
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
+
+      <div class="artist-actions">
+        <a class="btn-wa" href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20quiero%20contar%20una%20idea%20para%20tatuar%20con%20Franco%20de%20InKuba">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+          Contanos tu idea
+        </a>
+        <a class="btn-outline" href="/portfolio/?artista=macerll">Ver su portfolio
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <dl class="artist-facts">
+        <div class="fact"><dt>Estilo</dt><dd>{{ artistas.macerll.especialidad }}</dd></div>
+        <div class="fact"><dt>Formato</dt><dd>Menor formato · trazo lineal</dd></div>
+        <div class="fact"><dt>Desde</dt><dd>{{ 2026 - artistas.macerll.anios }}</dd></div>
+        <div class="fact"><dt>Sede</dt><dd>Caballito, Buenos Aires</dd></div>
+        <div class="fact"><dt>Instagram</dt><dd><a href="{{ artistas.macerll.instagram }}">@franco_tattoo</a></dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<section class="bio-block" data-block="bio" aria-label="Bio de Franco">
-  <span class="kicker">Bio</span>
-  <h2 class="section-title">La entrada <em>natural</em></h2>
-  <div class="bio-copy">
-    <p><span class="first-word">Franco</span> es el tercer artista incorporado al estudio. Se especializa en piezas lineales y de menor formato, y suele ser la puerta de entrada para quienes se hacen su primer tatuaje en InKuba.</p>
-    <p>Como en todo el estudio, cada idea pasa primero por la evaluación de Armelio, que define si el proyecto es para Franco según la escala y la complejidad que pida.</p>
-  </div>
-</section>
-
 <section data-block="galeria" aria-label="Galería de piezas de Franco">
-  <span class="kicker">Portfolio de Franco</span>
-  <h2 class="section-title">Obra <em>documentada</em></h2>
-  <div class="gallery-head">
-    <div class="h-left"><span class="gallery-count"><strong>{{ piezasFranco | length }}</strong> piezas · <strong>{{ (piezasFranco | where("estado","cicatrizado")) | length }}</strong> cicatrizadas</span></div>
+  <div class="section-head">
+    <span class="kicker">Portfolio de Franco</span>
+    <h2 class="section-title">Obra <em>documentada</em></h2>
+    <p class="lede">{{ piezasFranco | length }} piezas cargadas, {{ (piezasFranco | where("estado","cicatrizado")) | length }} de ellas documentadas ya cicatrizadas.</p>
   </div>
   <div class="grid">
     {% for p in piezasFranco %}{{ gridCard(p, loop.index0) }}{% endfor %}
@@ -57,12 +72,42 @@ permalink: /artistas/macerll/
   <a href="/portfolio/?artista=macerll" class="gallery-out">Ver las {{ piezasFranco | length }} piezas de Franco <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
 </section>
 
-<section id="cta" data-block="cta" aria-label="Contanos tu idea para Franco">
-  <span class="kicker">Contanos tu idea</span>
-  <h2>Tu primer <em>tatuaje</em></h2>
-  <p>Mandanos tu idea, la zona del cuerpo y las referencias que tengas. En menos de 24 horas tenés una cotización concreta, sin cargo y sin compromiso.</p>
-  <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Franco%20en%20InKuba" class="cta-primary" aria-label="Abrir WhatsApp con mensaje precargado para Franco">
-    Contanos tu idea
-    <span class="cta-icon">WhatsApp <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-  </a>
+<section data-block="proceso" aria-label="Cómo es el proceso con Franco">
+  <div class="section-head">
+    <span class="kicker">El proceso</span>
+    <h2 class="section-title">Cómo es tatuarte <em>con Franco</em></h2>
+    <p class="lede">Del primer mensaje a la fecha de tu sesión, en cuatro pasos.</p>
+  </div>
+  <div class="pillars">
+    <article class="pillar">
+      <div class="num-title"><span class="num">01</span><h3 class="title">Nos mandás <em>tu idea</em></h3></div>
+      <p>Nos escribís con una imagen o referencia de lo que querés y la zona del cuerpo donde lo pensás hacer. Si es tu primer tatuaje, te guiamos desde cero.</p>
+    </article>
+    <article class="pillar">
+      <div class="num-title"><span class="num">02</span><h3 class="title">Armelio <em>la evalúa y la asigna</em></h3></div>
+      <p>Cada idea pasa primero por Armelio: revisa si es viable en la zona, la escala y cómo va a envejecer. Cuando el proyecto encaja con el trabajo de Franco, queda en sus manos, siempre bajo su supervisión.</p>
+    </article>
+    <article class="pillar">
+      <div class="num-title"><span class="num">03</span><h3 class="title">Diseño original, <em>sin compromiso</em></h3></div>
+      <p>Hablamos del proyecto y, a partir de tu idea, Franco dibuja un arte original desde cero —nada de plantillas ni catálogo— y lo hace sin ningún compromiso de tu parte.</p>
+    </article>
+    <article class="pillar">
+      <div class="num-title"><span class="num">04</span><h3 class="title">Ajustamos <em>hasta que estés seguro</em></h3></div>
+      <p>Proponés los cambios que quieras las veces que haga falta: seguimos ajustando hasta que el diseño te convenza del todo. Recién ahí lo aprobamos juntos, dejás una seña y coordinamos la fecha de la sesión.</p>
+    </article>
+  </div>
+</section>
+
+<section id="cta" class="cta-final" aria-label="Contanos tu idea para Franco">
+  <div class="cta-media" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <span class="kicker">CONTANOS TU IDEA</span>
+    <h2>Tu primer <em>tatuaje</em></h2>
+    <p class="cta-lede">Mandanos tu idea, la zona y las referencias que tengas. La evaluamos en el estudio y te cotizamos en menos de 24hs; si es tu primer tatuaje, te acompañamos en cada paso.</p>
+    <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Franco%20en%20InKuba" class="btn-wa-lg cta-final-btn" aria-label="Contanos tu idea por WhatsApp">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+      Contanos tu idea
+    </a>
+    <p class="cta-micro">Respondemos en menos de 24hs · Cotización sin cargo y sin compromiso.</p>
+  </div>
 </section>
