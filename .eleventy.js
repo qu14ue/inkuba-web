@@ -6,6 +6,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
 
+  // Fecha ISO YYYY-MM-DD para lastmod del sitemap
+  eleventyConfig.addFilter("isoDate", (date) => {
+    const d = date ? new Date(date) : new Date();
+    return d.toISOString().slice(0, 10);
+  });
+
   // Filtros para trabajar con portfolio.json sin hardcodear conteos en los templates
   eleventyConfig.addFilter("where", (arr, key, val) =>
     (arr || []).filter((item) => item[key] === val)
