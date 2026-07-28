@@ -1,0 +1,354 @@
+---
+layout: layouts/base.html
+title: "Cuidados y cicatrización del tatuaje — InKuba Tatto&Art Studio"
+description: "Guía de cuidados post-tatuaje del estudio: primer lavado con jabón de glicerina, cuándo empezar con la crema, sol, pileta y gimnasio. Qué es normal y cómo cuidar la cicatrización de tu tatuaje de realismo en Buenos Aires."
+permalink: /cuidados/
+---
+
+<!--
+  ============================================================
+  PÁGINA /cuidados
+  ------------------------------------------------------------
+  Contenido basado en el protocolo REAL que pasó Armelio
+  (texto) + la transcripción de su video "curar de la mejor
+  manera" (src/assets/video/cuidado/). Datos ya validados por
+  el estudio. Lo único aún abierto: la lista "cuándo consultar"
+  (estándar médico) y la marca de crema (Armelio dice "la que
+  te indique tu tatuador"). CSS propio embebido (clases .cui-*).
+  ============================================================
+-->
+
+<style>
+  .cui-wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  .cui-intro{padding:56px 20px}
+  .cui-intro p{font-size:15px;line-height:1.72;color:var(--fg-2);margin:0 auto 14px;max-width:720px}
+  .cui-intro p strong{color:var(--fg);font-weight:600}
+
+  .cui-sec{padding:56px 0}
+  .cui-sec-head{max-width:720px;margin:0 auto 22px}
+  .cui-sec-head .k{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
+  .cui-sec-head h2{font-family:var(--font-display);font-weight:500;font-size:30px;line-height:1.08;letter-spacing:-.01em;color:var(--fg);margin:0}
+  .cui-sec-head h2 em{font-style:italic;color:var(--accent)}
+  .cui-sec-head p{font-size:14px;line-height:1.6;color:var(--muted);margin:12px 0 0}
+
+  /* Timeline */
+  .cui-timeline{list-style:none;margin:0 auto;padding:0;max-width:720px;position:relative}
+  .cui-timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--border-2)}
+  .cui-timeline li{position:relative;padding:0 0 26px 34px}
+  .cui-timeline li::before{content:'';position:absolute;left:0;top:4px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .cui-timeline .t-when{display:block;font-family:var(--font-body);font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .cui-timeline .t-what{font-family:var(--font-display);font-weight:500;font-size:19px;color:var(--fg);margin:0 0 6px;line-height:1.2}
+  .cui-timeline .t-desc{font-size:13.5px;line-height:1.62;color:var(--fg-2);margin:0}
+
+  /* Rutina paso a paso */
+  .cui-steps{list-style:none;counter-reset:cui;margin:0 auto;padding:0;max-width:720px;display:flex;flex-direction:column;gap:14px}
+  .cui-steps li{counter-increment:cui;position:relative;padding:18px 20px 18px 62px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+  .cui-steps li::before{content:counter(cui,decimal-leading-zero);position:absolute;left:20px;top:16px;font-family:var(--font-display);font-weight:500;font-size:26px;color:var(--accent);line-height:1}
+  .cui-steps h3{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--fg);margin:0 0 5px}
+  .cui-steps p{font-size:13.5px;line-height:1.6;color:var(--fg-2);margin:0}
+  .cui-steps p strong{color:var(--fg);font-weight:600}
+
+  /* Callout crema */
+  .cui-note{max-width:720px;margin:0 auto;border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:8px;background:var(--surface);padding:22px 24px}
+  .cui-note h3{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+  .cui-note p{font-size:14px;line-height:1.65;color:var(--fg-2);margin:0}
+  .cui-note p strong{color:var(--fg);font-weight:600}
+  .cui-note .big{font-family:var(--font-display);font-weight:500;font-size:40px;line-height:1;color:var(--accent);display:block;margin-bottom:10px}
+  .cui-note a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+
+  /* Do / Don't cards */
+  .cui-dd{display:grid;gap:16px;max-width:720px;margin:0 auto}
+  .cui-card{border:1px solid var(--border);border-radius:10px;padding:22px 22px;background:var(--surface-2)}
+  .cui-card.si{border-left:2px solid var(--accent)}
+  .cui-card.no{border-left:2px solid #b5524a}
+  .cui-card h3{display:flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px;color:var(--fg)}
+  .cui-card.si h3 .badge{color:var(--accent)}
+  .cui-card.no h3 .badge{color:#c96a62}
+  .cui-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .cui-card li{position:relative;padding-left:20px;font-size:13.5px;line-height:1.55;color:var(--fg-2)}
+  .cui-card li strong{color:var(--fg);font-weight:600}
+  .cui-card.si li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .cui-card.no li::before{content:'';position:absolute;left:2px;top:6px;width:9px;height:1.5px;background:#c96a62}
+
+  /* Señales normal vs consultar */
+  .cui-signals{display:grid;gap:16px;max-width:720px;margin:0 auto}
+  .cui-signal{border:1px solid var(--border);border-radius:10px;padding:22px}
+  .cui-signal h3{font-family:var(--font-body);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
+  .cui-signal.ok h3{color:var(--accent)}
+  .cui-signal.alert h3{color:#d98a4e}
+  .cui-signal p{font-size:13.5px;line-height:1.62;color:var(--fg-2);margin:0}
+  .cui-signal.alert{background:var(--surface);border-left:2px solid #d98a4e}
+
+  /* Video Armelio */
+  .cui-video{max-width:900px;margin:0 auto;display:grid;gap:22px;align-items:start}
+  .cui-video-txt .k{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
+  .cui-video-txt h2{font-family:var(--font-display);font-weight:500;font-size:28px;line-height:1.1;color:var(--fg);margin:0 0 12px}
+  .cui-video-txt h2 em{font-style:italic;color:var(--accent)}
+  .cui-video-txt p{font-size:14px;line-height:1.65;color:var(--fg-2);margin:0 0 16px}
+  .cui-video-list{list-style:none;margin:0;padding:0;counter-reset:vid;display:flex;flex-direction:column;gap:9px}
+  .cui-video-list li{counter-increment:vid;position:relative;padding-left:30px;font-size:13.5px;line-height:1.5;color:var(--fg-2)}
+  .cui-video-list li::before{content:counter(vid);position:absolute;left:0;top:-1px;font-family:var(--font-display);font-weight:500;font-size:16px;color:var(--accent)}
+  .cui-video figure{margin:0}
+  .cui-video video{width:100%;max-width:360px;aspect-ratio:9/16;border-radius:12px;background:#000;border:1px solid var(--border);display:block;margin:0 auto}
+  .cui-video figcaption{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+
+  @media(min-width:768px){
+    .cui-dd{grid-template-columns:1fr 1fr}
+    .cui-signals{grid-template-columns:1fr 1fr}
+    .cui-sec-head h2{font-size:36px}
+    .cui-video{grid-template-columns:1.1fr .9fr;gap:36px}
+    .cui-video-txt h2{font-size:32px}
+  }
+</style>
+
+<section class="page-hero" aria-label="Cuidados del tatuaje — encabezado">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Inicio</a><span class="sep">/</span><span class="current">Cuidados</span>
+  </nav>
+  <span class="page-kicker">Post-tatuaje · Cicatrización</span>
+  <h1 class="page-title">Cómo cuidar <em>tu tatuaje</em></h1>
+  <p class="page-lede">La cicatrización es la mitad del trabajo. Un tatuaje de realismo bien ejecutado necesita buenos cuidados para asentar parejo y envejecer bien. Esta es la guía que seguimos en el estudio, tal como te la explica Armelio.</p>
+</section>
+
+<section class="cui-intro" aria-label="Introducción">
+  <div class="cui-wrap">
+    <p>Cuando terminás tu sesión, el tatuaje es una herida abierta que la piel tiene que regenerar. <strong>Lo que hagas en las próximas dos semanas define cómo va a quedar para siempre:</strong> si los grises asientan parejos, si la línea mantiene su definición y si el negro satura sin manchas. No es complicado, pero sí importa hacerlo bien.</p>
+    <p>Al terminar cada sesión te explicamos todo en persona. Guardá esta página para tenerla a mano, y si algo no te cierra, <strong>escribinos —el seguimiento es parte del trabajo</strong>, no un extra.</p>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="Las fases de la cicatrización">
+  <div class="cui-wrap">
+    <div class="cui-sec-head">
+      <span class="k">La línea de tiempo</span>
+      <h2>Las fases, <em>día por día</em></h2>
+      <p>El cuidado activo dura catorce días. Este es el recorrido de un tatuaje de black &amp; grey; cada piel va a su ritmo, pero las etapas son estas.</p>
+    </div>
+    <ol class="cui-timeline">
+      <li>
+        <span class="t-when">Día 0 · La sesión</span>
+        <p class="t-what">Salís con film y hacés el primer lavado</p>
+        <p class="t-desc">Cubrimos el tatuaje con film protector. Se retira a las <strong>3 horas</strong> (o cuando te indiquemos) y ahí hacés el primer lavado, que es el más importante: sacar bien todo el exceso de tinta y vaselina para que nada quede brillante y se transforme en costra.</p>
+      </li>
+      <li>
+        <span class="t-when">Días 1 y 2</span>
+        <p class="t-what">Solo agua y jabón, sin crema</p>
+        <p class="t-desc">Los dos primeros días lavás con agua y jabón de glicerina, y nada más. Todavía <strong>no se pone crema</strong>: la piel necesita cicatrizar de forma natural estas primeras horas.</p>
+      </li>
+      <li>
+        <span class="t-when">Día 3 al 14</span>
+        <p class="t-what">Lavado + una capa fina de crema</p>
+        <p class="t-desc">Recién a partir del tercer día sumás la crema, en capa muy fina, dos veces al día (mañana y tarde/noche). Este es el ritmo hasta completar los <strong>14 días</strong> de cicatrización.</p>
+      </li>
+      <li>
+        <span class="t-when">Semana 3 a 4</span>
+        <p class="t-what">Descamación y aspecto opaco</p>
+        <p class="t-desc">La piel se descama sola, como una quemadura de sol, y el tatuaje se ve apagado por una capa nueva translúcida. Es normal. <strong>No rasques ni arranques nada:</strong> el brillo vuelve solo.</p>
+      </li>
+      <li>
+        <span class="t-when">Semana 6 a 8</span>
+        <p class="t-what">Asentamiento completo · revisión</p>
+        <p class="t-desc">La piel termina de regenerarse en profundidad y se ve el resultado real. Es cuando evaluamos la pieza cicatrizada y, si algo no asentó parejo, hacemos el retoque sin cargo dentro de la garantía de 90 días.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="El primer lavado">
+  <div class="cui-wrap">
+    <div class="cui-sec-head">
+      <span class="k">Lo más importante</span>
+      <h2>El primer lavado, <em>paso a paso</em></h2>
+      <p>Es el momento que más define la cicatrización. Se hace apenas retirás el film, a las 3 horas de terminada la sesión.</p>
+    </div>
+    <ol class="cui-steps">
+      <li>
+        <h3>Retirá el film a las 3 horas</h3>
+        <p>Sacá el film pasadas unas 3 horas, o cuando te lo indiquemos según cómo veas la piel.</p>
+      </li>
+      <li>
+        <h3>Lavá con jabón de glicerina, frotando con firmeza</h3>
+        <p>Usá <strong>jabón neutro de glicerina</strong> y frotá con firmeza para retirar bien la grasa, la vaselina y los restos de sangre y tinta. <strong>Que no quede nada brillante pegado en la piel:</strong> ese exceso es lo que después se transforma en costra.</p>
+      </li>
+      <li>
+        <h3>Enjuagá con abundante agua</h3>
+        <p>Sacá todo el jabón con abundante agua, sin dejar residuos.</p>
+      </li>
+      <li>
+        <h3>Secá con papel de cocina, a presión suave</h3>
+        <p>Secá apoyando y presionando con papel de cocina, <strong>sin arrastrar</strong>. Nunca uses toalla de tela.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="La rutina del día 3 al 14">
+  <div class="cui-wrap">
+    <div class="cui-sec-head">
+      <span class="k">Del día 3 al 14</span>
+      <h2>Lavado y crema, <em>dos veces al día</em></h2>
+      <p>Pasados los dos primeros días sin crema, esta es la rutina diaria hasta completar las dos semanas.</p>
+    </div>
+    <ol class="cui-steps">
+      <li>
+        <h3>Lavá y secá igual que siempre</h3>
+        <p>Agua y jabón de glicerina, y secado con papel de cocina a toques. Mañana y tarde/noche.</p>
+      </li>
+      <li>
+        <h3>Aplicá una capa fina de crema</h3>
+        <p>Después del lavado, poné una capa <strong>muy fina</strong> de crema específica para tatuajes y extendela hasta que prácticamente desaparezca sobre la piel. Ojo: el <strong>exceso de hidratación afecta</strong> la cicatrización. Menos es más.</p>
+      </li>
+      <li>
+        <h3>Repetí dos veces al día</h3>
+        <p>Lavado + crema a la mañana y a la tarde/noche. Si en el medio la sentís muy tirante o con picazón, podés volver a ponerte una capa fina —según cómo veas la piel.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="Qué crema usar">
+  <div class="cui-wrap">
+    <div class="cui-note">
+      <h3>¿Qué crema usar?</h3>
+      <!-- ⚠️ Armelio no nombra marca en el video ("la que te indique tu tatuador"). Si quiere,
+           acá se puede poner la marca puntual que recomienda. -->
+      <p>La que te indique tu tatuador: una crema <strong>profesional para tatuajes</strong>, que no tenga muchos químicos ni nada que pueda atentar contra el curado perfecto de la pieza. Ante la duda, preguntanos antes de comprar cualquier cosa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIDEO DE ARMELIO — "Curar de la mejor manera"
+     Archivo real: src/assets/video/cuidado/curar_de_la_mejor_manera.mp4
+     (9:16, con audio y subtítulos). Poster generado del primer frame.
+     Los puntos de "En el video" salen de la transcripción del audio.
+     ============================================================ -->
+<section class="cui-sec" aria-label="Armelio explica los cuidados en video">
+  <div class="cui-video">
+    <div class="cui-video-txt">
+      <span class="k">En sus palabras</span>
+      <h2>Armelio te lo explica <em>en un minuto</em></h2>
+      <p>Los mismos cuidados, contados por Armelio en el estudio. Un repaso rápido de todo lo que importa para que tu tatuaje cure de la mejor manera.</p>
+      <ol class="cui-video-list">
+        <li>Sin crema los primeros 2 días: dejás que la piel cicatrice de forma natural.</li>
+        <li>Desde el día 3, una capa fina de crema, 2 o 3 veces según cómo veas la piel, durante los 14 días.</li>
+        <li>Qué crema elegir: profesional para tatuajes, sin exceso de químicos.</li>
+        <li>El primer lavado: jabón de glicerina, pH neutro, sin que quede nada brillante.</li>
+        <li>Nada de sol directo, mar, piletas ni saunas, y no rascarte el tatuaje.</li>
+      </ol>
+    </div>
+    <div class="cui-video-media">
+      <figure>
+        <video controls preload="none" playsinline poster="/assets/video/cuidado/curar-poster.jpg">
+          <source src="/assets/video/cuidado/curar_de_la_mejor_manera.mp4" type="video/mp4">
+          Tu navegador no reproduce este video.
+        </video>
+        <figcaption>Armelio · Cómo curar tu tatuaje de la mejor manera</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="Qué hacer y qué evitar">
+  <div class="cui-wrap">
+    <div class="cui-sec-head">
+      <span class="k">Sí y no</span>
+      <h2>Qué cuidar <em>hasta los 14 días</em></h2>
+      <p>Mientras dura la cicatrización, estas son las reglas que marcan la diferencia.</p>
+    </div>
+    <div class="cui-dd">
+      <div class="cui-card si">
+        <h3><span class="badge">✓</span> Hacé</h3>
+        <ul>
+          <li>Mantené el tatuaje <strong>siempre limpio e hidratado</strong> (sin exceso de crema).</li>
+          <li>Usá <strong>ropa holgada</strong> que no roce ni apriete la zona.</li>
+          <li>Cuidá tu <strong>alimentación e hidratación:</strong> ayudan a cicatrizar.</li>
+          <li>Ante la duda, <strong>mandanos una foto</strong> y te orientamos.</li>
+        </ul>
+      </div>
+      <div class="cui-card no">
+        <h3><span class="badge">✕</span> Evitá</h3>
+        <ul>
+          <li><strong>Sol directo</strong> y altas temperaturas (saunas, hornos).</li>
+          <li>Bañarte en <strong>piletas, playas, ríos,</strong> baños de vapor o jacuzzis.</li>
+          <li><strong>Deportes de contacto</strong> y todo lo que golpee o roce la zona.</li>
+          <li><strong>Rascar o arrancar</strong> costritas y escamas.</li>
+          <li>Cremas perfumadas o con <strong>muchos químicos</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="Qué es normal y cuándo consultar">
+  <div class="cui-wrap">
+    <div class="cui-sec-head">
+      <span class="k">Tranquilidad</span>
+      <h2>Qué es normal <em>y cuándo consultar</em></h2>
+      <p>La mayoría de las cosas que asustan son parte de la cicatrización. Pero conviene distinguir lo esperable de lo que amerita escribirnos.</p>
+    </div>
+    <!-- ⚠️ REVISAR con Armelio: la columna "cuándo consultar" es estándar médico general. -->
+    <div class="cui-signals">
+      <div class="cui-signal ok">
+        <h3>Es normal</h3>
+        <p>Enrojecimiento e hinchazón leves los primeros días · calor en la zona · algo de líquido transparente o rojizo (plasma) · descamación y costritas finas · picazón · aspecto opaco o “lechoso” en la semana 3-4. Todo esto es la piel haciendo su trabajo.</p>
+      </div>
+      <div class="cui-signal alert">
+        <h3>Escribinos si aparece</h3>
+        <p>Dolor que <strong>aumenta</strong> después del día 3-4 en vez de bajar · pus amarillo o verdoso · mal olor · enrojecimiento que se <strong>expande</strong> o rayas rojas saliendo de la zona · fiebre o malestar general. Ante cualquiera de estas señales, mandanos una foto por WhatsApp y, si hace falta, consultá con un médico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="Cuidado a largo plazo">
+  <div class="cui-wrap">
+    <div class="cui-sec-head">
+      <span class="k">Para siempre</span>
+      <h2>Que se vea impecable <em>dentro de diez años</em></h2>
+      <p>Terminada la cicatrización, el único cuidado que de verdad importa a largo plazo es uno.</p>
+    </div>
+    <p style="max-width:720px;margin:0 auto;font-size:14.5px;line-height:1.7;color:var(--fg-2)">El sol es lo que más desvanece un tatuaje con los años, y el black &amp; grey lo sufre especialmente porque vive de contraste. Una vez cicatrizado, cada vez que la zona quede expuesta al sol usá <strong style="color:var(--fg)">protector solar factor 50</strong>. Es la diferencia entre un realismo que mantiene su profundidad y uno que se apaga. Y una piel bien hidratada conserva mejor los grises: una crema común, de rutina, alcanza.</p>
+  </div>
+</section>
+
+<section class="cui-sec" aria-label="Garantía de cicatrización">
+  <div class="cui-wrap">
+    <div class="cui-note">
+      <span class="big">90 días</span>
+      <p>Cuidar bien tu tatuaje es tu parte; responder por el resultado es la nuestra. Todos nuestros trabajos incluyen revisión y retoque de cicatrización sin costo durante los primeros 90 días desde la última sesión. Si una línea perdió definición o un área no asentó pareja, se corrige. Podés ver <a href="/portfolio/">nuestros trabajos ya cicatrizados</a>, no solo recién hechos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="cta-final" aria-label="Contanos tu idea">
+  <div class="cta-media" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <span class="kicker">¿Dudas con tu cicatrización?</span>
+    <h2>Escribinos <em>y te orientamos</em></h2>
+    <p class="cta-lede">Mandanos una foto y te decimos cómo va. El seguimiento es parte del trabajo.</p>
+    <a href="https://wa.me/{{ site.whatsapp }}?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20cuidados%20de%20mi%20tatuaje" class="btn-wa-lg cta-final-btn" aria-label="Consultar por WhatsApp">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.9.53 3.68 1.44 5.19L2 22l4.95-1.3A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.1 14.13c-.22.63-1.29 1.2-1.79 1.24-.5.05-.5.4-3.17-.66-2.68-1.05-4.35-3.83-4.48-4-.13-.17-1.06-1.41-1.06-2.7 0-1.28.68-1.91.92-2.18.24-.26.52-.33.7-.33h.5c.16 0 .38-.06.6.46.22.53.76 1.83.83 1.96.07.13.11.28.02.46-.09.17-.13.28-.27.44-.13.15-.28.34-.4.45-.13.13-.27.28-.12.55.15.28.68 1.12 1.46 1.81 1 .89 1.85 1.16 2.12 1.29.28.13.44.11.6-.07.17-.18.7-.81.88-1.09.18-.28.35-.24.6-.15.24.09 1.53.72 1.79.85.26.13.44.2.5.31.07.11.07.66-.15 1.29z"/></svg>
+      Consultar por WhatsApp
+    </a>
+    <p class="cta-micro">Respondemos tus dudas de cicatrización · Y si querés empezar una pieza nueva, también estamos.</p>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo cuidar un tatuaje recién hecho",
+  "description": "Guía de cuidados y cicatrización post-tatuaje del estudio InKuba: primer lavado con jabón de glicerina, cuándo empezar con la crema y qué evitar para que un tatuaje de realismo asiente parejo.",
+  "totalTime": "P14D",
+  "step": [
+    { "@type": "HowToStep", "name": "Retirar el film a las 3 horas", "text": "Retirá el film protector unas 3 horas después de terminada la sesión, o cuando tu tatuador te lo indique según cómo veas la piel." },
+    { "@type": "HowToStep", "name": "Primer lavado con jabón de glicerina", "text": "Lavá con jabón neutro de glicerina frotando con firmeza para retirar la grasa, la vaselina y los restos de tinta y sangre. Que no quede nada brillante pegado en la piel, porque el exceso se transforma en costra. Enjuagá con abundante agua y secá con papel de cocina presionando suavemente, sin arrastrar." },
+    { "@type": "HowToStep", "name": "Días 1 y 2: solo agua y jabón, sin crema", "text": "Los dos primeros días lavá únicamente con agua y jabón de glicerina, sin aplicar crema, para que la piel cicatrice de forma natural." },
+    { "@type": "HowToStep", "name": "Desde el día 3: capa fina de crema dos veces al día", "text": "A partir del tercer día, después del lavado, aplicá una capa muy fina de crema específica para tatuajes hasta que prácticamente desaparezca sobre la piel, dos veces al día (mañana y tarde/noche). El exceso de hidratación afecta la cicatrización." },
+    { "@type": "HowToStep", "name": "Cuidados hasta los 14 días", "text": "Durante los 14 días de cicatrización evitá el sol directo y las altas temperaturas (saunas, hornos), no te bañes en piletas, playas, ríos, baños de vapor ni jacuzzis, usá ropa holgada que no roce, evitá deportes de contacto y no rasques el tatuaje. Mantené una buena alimentación e hidratación." },
+    { "@type": "HowToStep", "name": "Revisión a las 6-8 semanas", "text": "La cicatrización profunda se completa entre la semana 6 y 8. En ese momento el estudio evalúa la pieza cicatrizada y realiza el retoque sin cargo si hace falta, dentro de los 90 días de garantía." }
+  ]
+}
+</script>
