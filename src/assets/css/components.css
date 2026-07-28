@@ -221,6 +221,9 @@ h1.hero-title.statement em{font-weight:700;color:#c3d2db}
 .cta-final-btn{align-self:center;font-size:16px;padding:16px 30px}
 .cta-final-btn svg{opacity:1}
 .cta-final .cta-micro{font-size:11px;letter-spacing:.1em;line-height:1.6;color:var(--muted);margin:26px auto 0;max-width:460px}
+/* Links de prosa (contextuales) — visibles sobre el a{color:inherit} global */
+.ig-foot a,.faq-item .a a,.pillar p a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.ig-foot a:hover,.faq-item .a a:hover,.pillar p a:hover{color:var(--accent-hover)}
 .cta-compact{padding:56px 20px 64px;background:radial-gradient(140% 60% at 50% 0%,#181c20 0%,#0e1013 60%,#070809 100%);border-top:1px solid var(--border)}
 .cta-compact .kicker{color:var(--accent)}
 .cta-compact .kicker::before{background:var(--accent)}
