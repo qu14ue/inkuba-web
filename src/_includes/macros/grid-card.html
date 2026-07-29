@@ -3,6 +3,7 @@
 {% set v = variants[index % 6] %}
 <div class="grid-card" data-lightbox-trigger tabindex="0" role="button"
   data-parte="{{ p.parte }}"
+  data-tamano="{{ p.tamano | lower }}"
   data-estilo="{{ p.estilo | lower }}"
   data-tematica="{{ p.tematica | join(' ') }}"
   data-artista="{{ p.artistaSlug }}"

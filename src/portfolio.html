@@ -25,8 +25,7 @@ permalink: /portfolio/
   </div>
   <div class="chips-row" role="tablist" aria-label="Filtros rápidos por parte del cuerpo">
     <button class="chip active" data-quick="todo">Todo <span class="count-num">{{ portfolio | length }}</span></button>
-    <button class="chip" data-dim="parte" data-val="manga">Manga completa <span class="count-num">{{ (portfolio | where("parte","manga")) | length }}</span></button>
-    <button class="chip" data-dim="parte" data-val="media-manga">Media manga <span class="count-num">{{ (portfolio | where("parte","media-manga")) | length }}</span></button>
+    <button class="chip" data-dim="parte" data-val="brazo">Brazo <span class="count-num">{{ (portfolio | where("parte","brazo")) | length }}</span></button>
     <button class="chip" data-dim="parte" data-val="pierna">Pierna <span class="count-num">{{ (portfolio | where("parte","pierna")) | length }}</span></button>
     <button class="chip" data-dim="parte" data-val="espalda">Espalda <span class="count-num">{{ (portfolio | where("parte","espalda")) | length }}</span></button>
     <button class="chip" data-dim="parte" data-val="otro">Otro <span class="count-num">{{ (portfolio | where("parte","otro")) | length }}</span></button>
@@ -61,16 +60,26 @@ permalink: /portfolio/
 <aside class="drawer" data-drawer role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
   <div class="handle" aria-hidden="true"></div>
   <h3 id="drawer-title">Filtrar <em>portfolio</em></h3>
-  <p class="drawer-sub">Cinco ejes · Combinables</p>
+  <p class="drawer-sub">Seis ejes · Combinables</p>
 
   <div class="drawer-group">
     <div class="group-label"><span>Parte del cuerpo</span><span class="helper">Elegí una o varias</span></div>
     <div class="options">
-      <button class="chip" data-dim="parte" data-val="manga">Manga completa <span class="count-num">{{ (portfolio | where("parte","manga")) | length }}</span></button>
-      <button class="chip" data-dim="parte" data-val="media-manga">Media manga <span class="count-num">{{ (portfolio | where("parte","media-manga")) | length }}</span></button>
+      <button class="chip" data-dim="parte" data-val="brazo">Brazo <span class="count-num">{{ (portfolio | where("parte","brazo")) | length }}</span></button>
       <button class="chip" data-dim="parte" data-val="pierna">Pierna <span class="count-num">{{ (portfolio | where("parte","pierna")) | length }}</span></button>
       <button class="chip" data-dim="parte" data-val="espalda">Espalda <span class="count-num">{{ (portfolio | where("parte","espalda")) | length }}</span></button>
       <button class="chip" data-dim="parte" data-val="otro">Otro <span class="count-num">{{ (portfolio | where("parte","otro")) | length }}</span></button>
+    </div>
+  </div>
+
+  <div class="drawer-group">
+    <div class="group-label"><span>Tamaño</span><span class="helper">Extensión de la pieza</span></div>
+    <div class="options">
+      <button class="chip" data-dim="tamano" data-val="chico">Chico <span class="count-num">{{ (portfolio | where("tamano","Chico")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="mediano">Mediano <span class="count-num">{{ (portfolio | where("tamano","Mediano")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="grande">Grande <span class="count-num">{{ (portfolio | where("tamano","Grande")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="media manga">Media manga <span class="count-num">{{ (portfolio | where("tamano","Media manga")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="manga completa">Manga completa <span class="count-num">{{ (portfolio | where("tamano","Manga completa")) | length }}</span></button>
     </div>
   </div>
 

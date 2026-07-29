@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!cards.length) return;
 
   // ---- Estado ----
-  const state = { parte: new Set(), estilo: new Set(), tematica: new Set(), artista: new Set(), tipo: new Set() };
+  const state = { parte: new Set(), tamano: new Set(), estilo: new Set(), tematica: new Set(), artista: new Set(), tipo: new Set() };
   const MULTI = ['tematica', 'tipo']; // campos array en la card (lógica "has")
   const anyActive = () => Object.values(state).some((s) => s.size);
 
