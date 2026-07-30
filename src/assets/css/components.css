@@ -27,8 +27,11 @@ h1.hero-title em{font-style:italic;color:var(--fg-2);font-weight:400}
 h1.hero-title.statement{font-weight:700;font-size:42px;line-height:1.04;letter-spacing:-.02em;max-width:600px}
 h1.hero-title.statement em{font-weight:700;color:#c3d2db}
 .hero-sub{font-size:14px;line-height:1.55;color:var(--fg-2);opacity:.9;max-width:300px}
-.hero-evidence{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);opacity:.85;padding-top:14px;border-top:1px solid var(--border)}
-.hero-evidence span{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.hero-evidence{display:inline-flex;align-items:center;gap:22px;padding-top:14px;border-top:1px solid var(--border)}
+.hero-evidence .ev-stat{display:flex;flex-direction:column;gap:3px}
+.hero-evidence .ev-num{font-family:var(--font-display);font-size:28px;font-weight:600;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.hero-evidence .ev-lbl{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);opacity:.75}
+.hero-evidence .ev-sep{width:1px;height:34px;background:var(--border)}
 
 /* === Strip de sellos (bajo el hero) === */
 .sellos{padding-top:0;padding-bottom:0}
@@ -407,7 +410,7 @@ p.page-lede{font-size:14px;line-height:1.6;letter-spacing:-.005em;color:var(--mu
 /* === Lightbox — portfolio no navega, se ve todo sin salir de la página === */
 .lightbox{position:fixed;inset:0;z-index:60;background:rgba(5,5,6,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .22s ease}
 .lightbox.open{opacity:1;pointer-events:auto}
-.lightbox-close{position:absolute;top:20px;right:20px;width:38px;height:38px;border-radius:50%;background:var(--surface-2);border:1px solid var(--border-2);color:var(--fg);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-close{position:absolute;top:20px;right:20px;z-index:10;width:38px;height:38px;border-radius:50%;background:var(--surface-2);border:1px solid var(--border-2);color:var(--fg);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lightbox-body{width:auto;max-width:94vw;display:flex;flex-direction:column;align-items:center}
 .lightbox-body .ph{aspect-ratio:auto;width:auto;height:82vh;max-width:94vw;background:none;border-radius:4px;margin-bottom:16px}
 .lightbox-body .ph .ph-img{position:static;width:auto;height:100%;max-width:94vw;object-fit:contain}
@@ -454,7 +457,7 @@ p.page-lede{font-size:14px;line-height:1.6;letter-spacing:-.005em;color:var(--mu
 
 /* ===== Página de artista — bloque de datos bajo la bio (chips · métricas · acciones · ficha) ===== */
 .bio-copy .artist-chips{margin-top:24px}
-.artist-stats{display:flex;flex-wrap:wrap;gap:26px;margin-top:26px;padding-top:24px;border-top:1px solid var(--border)}
+.artist-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px;padding-top:24px;border-top:1px solid var(--border)}
 .artist-stats .stat{display:flex;flex-direction:column;gap:5px}
 .artist-stats .stat-num{font-family:var(--font-display);font-weight:600;font-size:34px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
 .artist-stats .stat-label{font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}

@@ -12,6 +12,7 @@
     { "label": "Portfolio", "url": "/portfolio/" },
     { "label": "Artistas", "url": "/artistas/" },
     { "label": "Cómo trabajamos", "url": "/#como-trabajamos" },
+    { "label": "Cuidados", "url": "/cuidados/" },
     { "label": "FAQ", "url": "/faq/" }
   ]
 }

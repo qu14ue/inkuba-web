@@ -13,6 +13,21 @@
   usa margen negativo igual a --edge-pad para volver a tocar el borde real.
 */
 
+/* ============ FOOTER CENTRADO — solo mobile/tablet (< 1024px) ============ */
+@media (max-width: 1023px) {
+  footer .foot-grid { align-items: center; text-align: center; }
+  footer .foot-brand { justify-content: center; }
+  footer .foot-tag { max-width: none; }
+  footer .foot-nav a { text-align: center; }
+  footer .foot-contact a { justify-content: center; }
+  footer .foot-legal { flex-direction: column; justify-content: center; gap: 10px; }
+
+  /* CTA buttons centrados en mobile */
+  .stepper-cta { text-align: center; }
+  .ubi-btn { align-self: center; }
+  .ig-cta .btn-wa-lg { align-self: center; }
+}
+
 /* ============ TABLET (>= 768px) ============ */
 @media (min-width: 768px) {
   :root {
@@ -98,6 +113,7 @@
   .nav-links a:hover { background: rgba(157,184,201,.12); color: var(--fg); }
   .nav-links a[aria-current="page"] { background: rgba(157,184,201,.16); color: var(--fg); }
   .nav-actions .btn-wa .wa-label { display: inline; }
+  .nav-links .nav-cta { display: none; }
 
   /* Ritmo vertical más generoso en secciones genéricas (las clases especiales conservan el suyo) */
   section { padding-top: 96px; padding-bottom: 96px; }
@@ -207,6 +223,18 @@
   /* Con el hero a pantalla completa, bottom:72px queda pegado al piso — subimos el bloque
      de texto para que quede en el tercio inferior, no en el borde. */
   .hero-body { bottom: 120px; }
+}
+
+/* ===== /artistas — índice editorial: centrado solo en mobile (< 768px) ===== */
+@media (max-width: 767px) {
+  .artist-block { align-items: center; }
+  .artist-body { width: 100%; text-align: center; }
+  .artist-chips { justify-content: center; }
+  .artist-bio { margin-left: auto; margin-right: auto; }
+  .artist-works { width: 100%; }
+
+  /* Pie de reseñas: link + badge centrados y apilados */
+  .reviews-foot { flex-direction: column; justify-content: center; align-items: center; }
 }
 
 /* ===== /artistas — índice editorial (Opción A): tablet+ ===== */

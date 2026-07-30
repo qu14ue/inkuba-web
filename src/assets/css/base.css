@@ -42,6 +42,9 @@ body.has-hero main{padding-top:0}
 .nav-links.open{opacity:1;transform:translateY(0);pointer-events:auto}
 .nav-links a{padding:12px 14px;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#b9b7b2;transition:background .2s ease,color .2s ease}
 .nav-links a:hover,.nav-links a[aria-current="page"]{background:rgba(157,184,201,.12);color:var(--fg)}
+.nav-links .nav-cta{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;padding:13px 14px;border-radius:8px;background:var(--accent);color:var(--accent-ink);font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:none}
+.nav-links .nav-cta svg{flex:none;opacity:.9}
+.nav-links .nav-cta:hover,.nav-links .nav-cta[aria-current="page"]{background:var(--accent-hover);color:var(--accent-ink)}
 
 /* Secciones y tipografía compartida */
 section{padding:56px 20px;border-top:1px solid var(--border);position:relative}
