@@ -3,6 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Tag Manager (first-party loader · Addingwell) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://sshu.inkuba-tattoo.com.ar/xebr2luuhayza9z.js?awl='+i.replace(/^GTM-/,
+  '')+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PZGJX6TR');</script>
+  <!-- End Google Tag Manager -->
   <title>{{ title or site.nombre }}</title>
   {% if description %}<meta name="description" content="{{ description }}" />{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,6 +22,10 @@
   <link rel="stylesheet" href="/assets/css/responsive.css" />
 </head>
 <body class="{{ bodyClass }}">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://sshu.inkuba-tattoo.com.ar/ns.html?id=GTM-PZGJX6TR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   {% include "partials/header.html" %}
   <main>
     {{ content | safe }}
