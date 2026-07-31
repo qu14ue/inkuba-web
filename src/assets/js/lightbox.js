@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
       (metaHtml ? '<div class="lb-meta">' + metaHtml + '</div>' : '');
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'view_item',
+      item_name: (title || '').trim(),
+      page_path: location.pathname
+    });
   };
   const close = () => {
     lightbox.classList.remove('open');

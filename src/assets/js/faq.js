@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     d.addEventListener('toggle', () => {
       if (!d.open) return;
       document.querySelectorAll('.faq-item[open]').forEach((other) => { if (other !== d) other.open = false; });
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'faq_open',
+        question: (d.querySelector('.q, summary')?.textContent || '').trim(),
+        page_path: location.pathname
+      });
     });
   });
 });
