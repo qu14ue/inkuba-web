@@ -93,6 +93,8 @@ h1.hero-title.statement em{font-weight:700;color:#c3d2db}
 .team-card .name em{font-style:italic;color:var(--fg-2);font-weight:300;font-size:20px}
 .team-card p{font-size:13px;line-height:1.55;color:var(--muted)}
 .team-card .link{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-2);display:inline-flex;align-items:center;gap:6px;padding-bottom:4px;border-bottom:1px solid var(--border-2);align-self:flex-start}
+.team-card .artist-chips{margin-bottom:0}
+.team-card .artist-chips .chip{cursor:default}
 .team-secondary{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .team-secondary .team-card .name{font-size:22px}
 .team-secondary .team-card p{font-size:12px}
@@ -275,7 +277,9 @@ section[data-block="cta"] p{font-size:14px;line-height:1.62;color:var(--muted);m
 .bio-block h2.section-title{font-size:30px;margin-bottom:22px}
 .bio-block .bio-copy{font-size:14px;line-height:1.68;color:var(--fg-2);font-weight:300;letter-spacing:-.005em}
 .bio-block .bio-copy p+p{margin-top:14px}
-.bio-block .bio-copy .first-word{font-family:var(--font-display);font-style:italic;font-weight:500;color:var(--fg)}
+.bio-block .bio-copy .bio-subtitle{font-family:var(--font-display);font-style:italic;font-size:19px;font-weight:500;color:var(--accent);margin:6px 0 16px;letter-spacing:0}
+.bio-block .bio-copy .bio-subtitle em{font-style:italic}
+.bio-block .bio-copy .first-word{font-family:inherit;font-style:inherit;font-weight:inherit;color:inherit}
 
 /* Video */
 .video-block .video-poster{position:relative;aspect-ratio:16/9;background:radial-gradient(120% 100% at 50% 40%,#2a2b2e 0%,#181819 40%,#0a0a0c 80%,#050506 100%);overflow:hidden;border-radius:2px;cursor:pointer}
