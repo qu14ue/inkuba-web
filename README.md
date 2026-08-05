@@ -35,7 +35,17 @@ Los templates son `.html` (no `.njk`) a propósito: Eleventy los procesa igual (
 
 ### Cómo agregar una pieza nueva al portfolio
 
-Editar `src/_data/portfolio.json` y agregar un objeto con `slug`, `titulo`, `artistaSlug`, `artista`, `estilo`, `zona`, `sesiones`, `estado` (`"cicatrizado"` o `"reciente"`), `semanas`, `tipo` (array: `gran-formato`, `cover-up`, `manga-completa`, `primer-tatuaje`) y `destacadoHome` (si aparece en el carrusel "La obra" de la home). Los conteos de `/portfolio` (chips, drawer) y de la galería de cada artista se recalculan solos — no hay números para tocar a mano.
+Editar `src/_data/portfolio.json` (una pieza por línea) y agregar un objeto con estos campos:
+
+- `slug`, `titulo`, `artistaSlug` (`armelio` | `lyvan` | `macerll` — Franco usa el slug `macerll`), `artista` (nombre visible)
+- **`estilo`** (eje de filtro, valor único). Valores válidos: `Realismo B&N`, `Realismo con color`, `Puntillismo`, `Fine Line`, `Blackwork`.
+- **`parte`** (ubicación, filtro): `brazo` | `pierna` | `espalda` | `otro`
+- **`tamano`** (filtro): `Chico` | `Mediano` | `Grande` | `Media manga` | `Manga completa`
+- **`tematica`** (array, filtro): p. ej. `retrato`, `mitologia`, `animal`, `alegoria`
+- **`tipo`** (array, filtro): `nuevo` | `cover-up` | `retoque`
+- `zona` (texto libre solo para la ficha), `sesiones`, `estado` (`cicatrizado` | `reciente`), `semanas`, `imagen` (ruta en `src/assets/img/portfolio/{artista}/`), `destacadoHome` (si aparece en el carrusel "La obra" de la home).
+
+Los conteos de los chips de `/portfolio` y de la galería de cada artista se recalculan solos — no hay números para tocar a mano. El match de filtros es case-insensitive (`filters.js` compara en minúsculas).
 
 ## Estado (11-jul-2026)
 
