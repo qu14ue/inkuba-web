@@ -14,7 +14,7 @@ section[data-block="11"]{background:linear-gradient(180deg,#1c1c1f 0%,#141416 50
 
 /* === Hero (home) === */
 .hero{position:relative;height:640px;overflow:hidden;background:radial-gradient(140% 100% at 40% 30%,#2c2d30 0%,#181819 40%,#0a0a0c 80%,#050506 100%)}
-.hero-media{position:absolute;inset:0;z-index:1;background-color:#141416;background-image:url('/assets/img/hero/bg-web.webp');background-size:cover;background-position:center top;background-repeat:no-repeat}
+.hero-media{position:absolute;inset:0;z-index:1;background-color:#141416;background-image:url('/assets/img/hero/bg-mobile.webp');background-size:cover;background-position:center;background-repeat:no-repeat}
 .hero-media::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 42%,rgba(0,0,0,.06) 0%,rgba(0,0,0,.42) 100%),linear-gradient(180deg,rgba(0,0,0,.64) 0%,rgba(0,0,0,.24) 22%,rgba(0,0,0,.24) 58%,rgba(0,0,0,.62) 82%,rgba(0,0,0,.92) 100%),repeating-linear-gradient(45deg,rgba(255,220,180,.014) 0 1px,transparent 1px 3px)}
 .hero-media::after{content:'';position:absolute;inset:0;background:radial-gradient(50% 40% at 45% 45%,rgba(157,184,201,.10) 0%,rgba(0,0,0,0) 60%);mix-blend-mode:screen}
 .hero-play{position:absolute;z-index:3;top:calc(var(--header-h) + 14px);right:20px;display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-2);opacity:.7}
@@ -27,7 +27,7 @@ h1.hero-title{font-family:var(--font-display);font-weight:600;font-size:56px;lin
 h1.hero-title em{font-style:italic;color:var(--fg-2);font-weight:400}
 h1.hero-title.statement{font-weight:400;font-size:30px;line-height:1.08;letter-spacing:-.01em;max-width:640px}
 h1.hero-title.statement .hero-name{display:block;font-family:var(--font-body);font-style:normal;font-size:15px;font-weight:600;letter-spacing:.02em;color:var(--fg);margin-bottom:14px;line-height:1.2}
-h1.hero-title.statement em{display:block;font-weight:400;font-style:italic;color:#c3d2db}
+h1.hero-title.statement em{display:block;font-weight:700;font-style:normal;color:#c3d2db}
 
 /* === Estilos que trabajamos === */
 .estilos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -42,6 +42,8 @@ h1.hero-title.statement em{display:block;font-weight:400;font-style:italic;color
 .estilo-name{font-family:var(--font-display);font-size:18px;font-weight:500;line-height:1.1}
 .estilo-desc{font-family:var(--font-body);font-size:12px;line-height:1.4;color:var(--muted)}
 .hero-sub{font-size:14px;line-height:1.55;color:var(--fg-2);opacity:.9;max-width:300px}
+.hero-sub--desk{display:none}
+.eyebrow-addr{display:none}
 .hero-evidence{display:inline-flex;align-items:center;gap:22px;padding-top:14px;border-top:1px solid var(--border)}
 .hero-evidence .ev-stat{display:flex;flex-direction:column;gap:3px}
 .hero-evidence .ev-num{font-family:var(--font-display);font-size:28px;font-weight:600;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}

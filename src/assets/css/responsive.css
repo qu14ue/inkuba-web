@@ -74,6 +74,10 @@
   .estilos-grid { grid-template-columns: repeat(3, 1fr); }
   .sello-num { font-size: 46px; }
   .hero { height: 720px; }
+  .hero-media { background-image: url('/assets/img/hero/bg-web.webp'); background-position: center; }
+  .hero-sub--mobile { display: none; }
+  .hero-sub--desk { display: block; }
+  .eyebrow-addr { display: inline; }
 
   /* Page-hero (portada de páginas internas: portfolio, artistas) — el título y la bajada
      mobile quedan chicos dentro de la caja full-width, hay que escalarlos igual que el hero. */
@@ -231,6 +235,15 @@
 
 /* ===== /artistas — índice editorial: centrado solo en mobile (< 768px) ===== */
 @media (max-width: 767px) {
+  /* Hero: contenido en flujo (no absoluto) para que despeje el navbar y respire.
+     min-height full-screen + padding-top que limpia la píldora; el texto se empuja
+     hacia abajo con margin-top:auto pero nunca queda pegado arriba. */
+  .hero { height: auto; min-height: 100svh; display: flex; flex-direction: column; padding-top: calc(var(--header-h) + 22px); }
+  .hero-body { position: static; margin-top: auto; padding: 0 20px 46px; gap: 20px; }
+  .hero-sub { max-width: none; }
+  .hero-eyebrow::before { display: none; }
+  h1.hero-title.statement { margin: 4px 0; }
+
   .artist-block { align-items: center; }
   .artist-body { width: 100%; text-align: center; }
   .artist-chips { justify-content: center; }
