@@ -67,7 +67,8 @@
   }
 
   h1.hero-title { font-size: 76px; }
-  h1.hero-title.statement { font-size: 62px; max-width: 720px; }
+  h1.hero-title.statement { font-size: 44px; max-width: 720px; }
+  h1.hero-title.statement .hero-name { font-size: 17px; margin-bottom: 16px; }
   .sellos-grid { grid-template-columns: repeat(4, 1fr); }
   .sello { padding: 34px 16px; }
   .sello-num { font-size: 46px; }
@@ -135,13 +136,13 @@
      — foto de fondo real desde 1024px (hero-desktop), la de mobile es más alta/vertical. */
   .hero { height: 82vh; min-height: 560px; }
   .hero-media {
-    background-image: url('/assets/img/hero/hero-desktop.jpg');
-    background-image: image-set(url('/assets/img/hero/hero-desktop.webp') type('image/webp'), url('/assets/img/hero/hero-desktop.jpg') type('image/jpeg'));
+    background-image: url('/assets/img/hero/bg-web.webp');
     background-position: center;
   }
   .hero-body { bottom: 72px; }
   h1.hero-title { font-size: 108px; }
-  h1.hero-title.statement { font-size: 80px; max-width: 900px; }
+  h1.hero-title.statement { font-size: 56px; max-width: 820px; }
+  h1.hero-title.statement .hero-name { font-size: 18px; margin-bottom: 18px; }
   .section-head { margin-bottom: 60px; }
   .section-head h2.section-title { font-size: 54px; }
   .hero-sub { max-width: 480px; font-size: 16px; }
