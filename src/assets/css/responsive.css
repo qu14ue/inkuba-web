@@ -71,6 +71,7 @@
   h1.hero-title.statement .hero-name { font-size: 17px; margin-bottom: 16px; }
   .sellos-grid { grid-template-columns: repeat(4, 1fr); }
   .sello { padding: 34px 16px; }
+  .estilos-grid { grid-template-columns: repeat(3, 1fr); }
   .sello-num { font-size: 46px; }
   .hero { height: 720px; }
 
@@ -143,6 +144,8 @@
   h1.hero-title { font-size: 108px; }
   h1.hero-title.statement { font-size: 56px; max-width: 820px; }
   h1.hero-title.statement .hero-name { font-size: 18px; margin-bottom: 18px; }
+  .estilos-grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .estilo-name { font-size: 19px; }
   .section-head { margin-bottom: 60px; }
   .section-head h2.section-title { font-size: 54px; }
   .hero-sub { max-width: 480px; font-size: 16px; }

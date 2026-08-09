@@ -1,5 +1,6 @@
 /* === Home: fondos por bloque === */
 section[data-block="1"]{background:none;padding:0;border-top:0}
+section[data-block="estilos"]{background:linear-gradient(180deg,#26262a 0%,#181819 42%,#0d0d0e 100%)}
 section[data-block="2"]{background:linear-gradient(180deg,#28282c 0%,#1c1c1f 45%,#0e0e10 100%)}
 section[data-block="3"]{background:linear-gradient(180deg,#242428 0%,#181819 40%,#0c0c0e 100%)}
 section[data-block="4"]{background:linear-gradient(180deg,#2a2a2e 0%,#1c1c1f 45%,#0e0e10 100%)}
@@ -27,6 +28,19 @@ h1.hero-title em{font-style:italic;color:var(--fg-2);font-weight:400}
 h1.hero-title.statement{font-weight:400;font-size:30px;line-height:1.08;letter-spacing:-.01em;max-width:640px}
 h1.hero-title.statement .hero-name{display:block;font-family:var(--font-body);font-style:normal;font-size:15px;font-weight:600;letter-spacing:.02em;color:var(--fg);margin-bottom:14px;line-height:1.2}
 h1.hero-title.statement em{display:block;font-weight:400;font-style:italic;color:#c3d2db}
+
+/* === Estilos que trabajamos === */
+.estilos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.estilo-card{position:relative;display:flex;flex-direction:column;border:1px solid #26262a;border-radius:12px;overflow:hidden;background:#141416;text-decoration:none;color:var(--fg);transition:border-color .2s,transform .2s}
+.estilo-card:hover{border-color:#3a3a40;transform:translateY(-2px)}
+.estilo-card.is-feature{border:2px solid var(--accent)}
+.estilo-badge{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--font-body);font-size:9px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#0d0d0e;background:var(--accent);padding:3px 8px;border-radius:5px}
+.estilo-ph{display:block;position:relative;aspect-ratio:4/5;background:#1a1a1d;overflow:hidden}
+.estilo-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.estilo-card:hover .estilo-ph img{transform:scale(1.04)}
+.estilo-meta{display:flex;flex-direction:column;gap:3px;padding:12px 13px 14px}
+.estilo-name{font-family:var(--font-display);font-size:18px;font-weight:500;line-height:1.1}
+.estilo-desc{font-family:var(--font-body);font-size:12px;line-height:1.4;color:var(--muted)}
 .hero-sub{font-size:14px;line-height:1.55;color:var(--fg-2);opacity:.9;max-width:300px}
 .hero-evidence{display:inline-flex;align-items:center;gap:22px;padding-top:14px;border-top:1px solid var(--border)}
 .hero-evidence .ev-stat{display:flex;flex-direction:column;gap:3px}
