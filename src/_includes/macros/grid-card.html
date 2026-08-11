@@ -4,7 +4,7 @@
 <div class="grid-card" data-lightbox-trigger tabindex="0" role="button"
   data-parte="{{ p.parte }}"
   data-tamano="{{ p.tamano | lower }}"
-  data-estilo="{{ p.estilo | lower }}"
+  data-estilo="{{ p.estilos | join('|') | lower }}"
   data-tematica="{{ p.tematica | join(' ') }}"
   data-artista="{{ p.artistaSlug }}"
   data-tipo="{{ p.tipo | join(' ') }}">
@@ -15,7 +15,7 @@
   <h3 class="card-title">{{ p.titulo }}</h3>
   <div class="card-meta">
     <div class="row"><span>{{ p.artista }}</span><strong>{{ p.sesiones }} sesi{{ "ón" if p.sesiones == 1 else "ones" }}</strong></div>
-    <div class="row"><span>{{ p.zona }}</span><span>{{ p.estilo }}</span></div>
+    <div class="row"><span>{{ p.zona }}</span><span>{{ p.estilos | join(" · ") }}</span></div>
   </div>
 </div>
 {% endmacro %}
@@ -28,7 +28,7 @@
     {% if p.imagen %}<img class="ph-img" src="{{ p.imagen }}" alt="{{ p.titulo }}" loading="lazy">{% else %}<span class="ph-label">Pieza {{ "0" if index + 1 < 10 else "" }}{{ index + 1 }}</span>{% endif %}
   </div>
   <div class="microficha">
-    <div class="ficha-meta top">{{ p.estilo }} · {{ p.sesiones }} sesi{{ "ón" if p.sesiones == 1 else "ones" }}</div>
+    <div class="ficha-meta top">{{ p.estilos | join(" · ") }} · {{ p.sesiones }} sesi{{ "ón" if p.sesiones == 1 else "ones" }}</div>
     <h3 class="title">{{ p.titulo }}</h3>
     <div class="ficha-meta">{{ p.artista }} · {{ p.zona }}</div>
   </div>

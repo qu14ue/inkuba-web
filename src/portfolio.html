@@ -86,9 +86,10 @@ permalink: /portfolio/
   <div class="drawer-group">
     <div class="group-label"><span>Estilo</span><span class="helper">Técnica de ejecución</span></div>
     <div class="options">
-      <button class="chip" data-dim="estilo" data-val="realismo b&amp;n">Realismo B&amp;N <span class="count-num">{{ (curado | where("estilo","Realismo B&N")) | length }}</span></button>
-      <button class="chip" data-dim="estilo" data-val="realismo con color">Realismo con color <span class="count-num">{{ (curado | where("estilo","Realismo con color")) | length }}</span></button>
-      <button class="chip" data-dim="estilo" data-val="puntillismo">Puntillismo <span class="count-num">{{ (curado | where("estilo","Puntillismo")) | length }}</span></button>
+      <button class="chip" data-dim="estilo" data-val="realismo b&amp;n">Realismo B&amp;N <span class="count-num">{{ (curado | whereHas("estilos","Realismo B&N")) | length }}</span></button>
+      <button class="chip" data-dim="estilo" data-val="realismo con color">Realismo con color <span class="count-num">{{ (curado | whereHas("estilos","Realismo con color")) | length }}</span></button>
+      <button class="chip" data-dim="estilo" data-val="puntillismo">Puntillismo <span class="count-num">{{ (curado | whereHas("estilos","Puntillismo")) | length }}</span></button>
+      <button class="chip" data-dim="estilo" data-val="fine line">Fine Line <span class="count-num">{{ (curado | whereHas("estilos","Fine Line")) | length }}</span></button>
     </div>
   </div>
 

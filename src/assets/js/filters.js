@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Estado ----
   const state = { parte: new Set(), tamano: new Set(), estilo: new Set(), tematica: new Set(), artista: new Set(), tipo: new Set() };
-  const MULTI = ['tematica', 'tipo']; // campos array en la card (lógica "has")
+  const MULTI = ['tematica', 'tipo', 'estilo']; // campos array en la card (lógica "has")
+  const DELIM = { estilo: '|' }; // estilo se une con | porque sus valores llevan espacios
   const anyActive = () => Object.values(state).some((s) => s.size);
 
   // Etiquetas legibles por dim|val (tomadas del texto del chip, sin el contador)
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!set.size) continue;
       let ok;
       if (MULTI.includes(dim)) {
-        const tokens = (card.dataset[dim] || '').split(' ');
+        const tokens = (card.dataset[dim] || '').split(DELIM[dim] || ' ');
         ok = [...set].some((v) => tokens.includes(v));
       } else {
         ok = set.has(card.dataset[dim] || '');
