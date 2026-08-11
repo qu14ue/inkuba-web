@@ -5,6 +5,7 @@ description: "Tatuajes de autor terminados y documentados: realismo, black & gre
 permalink: /portfolio/
 ---
 {% from "macros/grid-card.html" import gridCard %}
+{% set curado = portfolio | where("enPortfolio", true) %}
 <section class="page-hero" aria-label="Portfolio — encabezado">
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Inicio</a><span class="sep">/</span><span class="current">Portfolio</span>
@@ -15,7 +16,7 @@ permalink: /portfolio/
 
 <div class="filter-bar" aria-label="Filtros del portfolio">
   <div class="filter-top">
-    <span class="count"><strong data-visible>{{ portfolio | length }}</strong> piezas</span>
+    <span class="count"><strong data-visible>{{ curado | length }}</strong> piezas</span>
     <button class="filters-btn" data-open-drawer aria-label="Abrir todos los filtros">
       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
       Filtros
@@ -23,21 +24,21 @@ permalink: /portfolio/
     </button>
   </div>
   <div class="chips-row" role="tablist" aria-label="Filtros rápidos por parte del cuerpo">
-    <button class="chip active" data-quick="todo">Todo <span class="count-num">{{ portfolio | length }}</span></button>
-    <button class="chip" data-dim="parte" data-val="brazo">Brazo <span class="count-num">{{ (portfolio | where("parte","brazo")) | length }}</span></button>
-    <button class="chip" data-dim="parte" data-val="pierna">Pierna <span class="count-num">{{ (portfolio | where("parte","pierna")) | length }}</span></button>
-    <button class="chip" data-dim="parte" data-val="espalda">Espalda <span class="count-num">{{ (portfolio | where("parte","espalda")) | length }}</span></button>
-    <button class="chip" data-dim="parte" data-val="otro">Otro <span class="count-num">{{ (portfolio | where("parte","otro")) | length }}</span></button>
+    <button class="chip active" data-quick="todo">Todo <span class="count-num">{{ curado | length }}</span></button>
+    <button class="chip" data-dim="parte" data-val="brazo">Brazo <span class="count-num">{{ (curado | where("parte","brazo")) | length }}</span></button>
+    <button class="chip" data-dim="parte" data-val="pierna">Pierna <span class="count-num">{{ (curado | where("parte","pierna")) | length }}</span></button>
+    <button class="chip" data-dim="parte" data-val="espalda">Espalda <span class="count-num">{{ (curado | where("parte","espalda")) | length }}</span></button>
+    <button class="chip" data-dim="parte" data-val="otro">Otro <span class="count-num">{{ (curado | where("parte","otro")) | length }}</span></button>
   </div>
   <div class="applied-row" aria-label="Filtros aplicados"></div>
 </div>
 
 <section class="grid-section" aria-label="Cuadrícula de piezas">
   <div class="grid">
-    {% for p in portfolio %}{{ gridCard(p, loop.index0) }}{% endfor %}
+    {% for p in curado %}{{ gridCard(p, loop.index0) }}{% endfor %}
   </div>
   <div class="load-more-wrap">
-    <span class="load-more-hint">Mostrando <strong>{{ portfolio | length }}</strong> de <strong>{{ portfolio | length }}</strong></span>
+    <span class="load-more-hint">Mostrando <strong>{{ curado | length }}</strong> de <strong>{{ curado | length }}</strong></span>
   </div>
 </section>
 
@@ -64,65 +65,62 @@ permalink: /portfolio/
   <div class="drawer-group">
     <div class="group-label"><span>Parte del cuerpo</span><span class="helper">Elegí una o varias</span></div>
     <div class="options">
-      <button class="chip" data-dim="parte" data-val="brazo">Brazo <span class="count-num">{{ (portfolio | where("parte","brazo")) | length }}</span></button>
-      <button class="chip" data-dim="parte" data-val="pierna">Pierna <span class="count-num">{{ (portfolio | where("parte","pierna")) | length }}</span></button>
-      <button class="chip" data-dim="parte" data-val="espalda">Espalda <span class="count-num">{{ (portfolio | where("parte","espalda")) | length }}</span></button>
-      <button class="chip" data-dim="parte" data-val="otro">Otro <span class="count-num">{{ (portfolio | where("parte","otro")) | length }}</span></button>
+      <button class="chip" data-dim="parte" data-val="brazo">Brazo <span class="count-num">{{ (curado | where("parte","brazo")) | length }}</span></button>
+      <button class="chip" data-dim="parte" data-val="pierna">Pierna <span class="count-num">{{ (curado | where("parte","pierna")) | length }}</span></button>
+      <button class="chip" data-dim="parte" data-val="espalda">Espalda <span class="count-num">{{ (curado | where("parte","espalda")) | length }}</span></button>
+      <button class="chip" data-dim="parte" data-val="otro">Otro <span class="count-num">{{ (curado | where("parte","otro")) | length }}</span></button>
     </div>
   </div>
 
   <div class="drawer-group">
     <div class="group-label"><span>Tamaño</span><span class="helper">Extensión de la pieza</span></div>
     <div class="options">
-      <button class="chip" data-dim="tamano" data-val="chico">Chico <span class="count-num">{{ (portfolio | where("tamano","Chico")) | length }}</span></button>
-      <button class="chip" data-dim="tamano" data-val="mediano">Mediano <span class="count-num">{{ (portfolio | where("tamano","Mediano")) | length }}</span></button>
-      <button class="chip" data-dim="tamano" data-val="grande">Grande <span class="count-num">{{ (portfolio | where("tamano","Grande")) | length }}</span></button>
-      <button class="chip" data-dim="tamano" data-val="media manga">Media manga <span class="count-num">{{ (portfolio | where("tamano","Media manga")) | length }}</span></button>
-      <button class="chip" data-dim="tamano" data-val="manga completa">Manga completa <span class="count-num">{{ (portfolio | where("tamano","Manga completa")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="chico">Chico <span class="count-num">{{ (curado | where("tamano","Chico")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="mediano">Mediano <span class="count-num">{{ (curado | where("tamano","Mediano")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="grande">Grande <span class="count-num">{{ (curado | where("tamano","Grande")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="media manga">Media manga <span class="count-num">{{ (curado | where("tamano","Media manga")) | length }}</span></button>
+      <button class="chip" data-dim="tamano" data-val="manga completa">Manga completa <span class="count-num">{{ (curado | where("tamano","Manga completa")) | length }}</span></button>
     </div>
   </div>
 
   <div class="drawer-group">
     <div class="group-label"><span>Estilo</span><span class="helper">Técnica de ejecución</span></div>
     <div class="options">
-      <button class="chip" data-dim="estilo" data-val="realismo b&amp;n">Realismo B&amp;N <span class="count-num">{{ (portfolio | where("estilo","Realismo B&N")) | length }}</span></button>
-      <button class="chip" data-dim="estilo" data-val="realismo con color">Realismo con color <span class="count-num">{{ (portfolio | where("estilo","Realismo con color")) | length }}</span></button>
-      <button class="chip" data-dim="estilo" data-val="puntillismo">Puntillismo <span class="count-num">{{ (portfolio | where("estilo","Puntillismo")) | length }}</span></button>
-      <button class="chip" data-dim="estilo" data-val="fine line">Fine Line <span class="count-num">{{ (portfolio | where("estilo","Fine Line")) | length }}</span></button>
-      <button class="chip" data-dim="estilo" data-val="blackwork">Blackwork <span class="count-num">{{ (portfolio | where("estilo","Blackwork")) | length }}</span></button>
+      <button class="chip" data-dim="estilo" data-val="realismo b&amp;n">Realismo B&amp;N <span class="count-num">{{ (curado | where("estilo","Realismo B&N")) | length }}</span></button>
+      <button class="chip" data-dim="estilo" data-val="realismo con color">Realismo con color <span class="count-num">{{ (curado | where("estilo","Realismo con color")) | length }}</span></button>
+      <button class="chip" data-dim="estilo" data-val="puntillismo">Puntillismo <span class="count-num">{{ (curado | where("estilo","Puntillismo")) | length }}</span></button>
     </div>
   </div>
 
   <div class="drawer-group">
     <div class="group-label"><span>Temática</span><span class="helper">Qué representa</span></div>
     <div class="options">
-      <button class="chip" data-dim="tematica" data-val="retrato">Retrato / personaje <span class="count-num">{{ (portfolio | whereHas("tematica","retrato")) | length }}</span></button>
-      <button class="chip" data-dim="tematica" data-val="alegoria">Alegoría / simbólico <span class="count-num">{{ (portfolio | whereHas("tematica","alegoria")) | length }}</span></button>
-      <button class="chip" data-dim="tematica" data-val="animal">Animal <span class="count-num">{{ (portfolio | whereHas("tematica","animal")) | length }}</span></button>
-      <button class="chip" data-dim="tematica" data-val="mitologia">Mitología <span class="count-num">{{ (portfolio | whereHas("tematica","mitologia")) | length }}</span></button>
+      <button class="chip" data-dim="tematica" data-val="retrato">Retrato / personaje <span class="count-num">{{ (curado | whereHas("tematica","retrato")) | length }}</span></button>
+      <button class="chip" data-dim="tematica" data-val="alegoria">Alegoría / simbólico <span class="count-num">{{ (curado | whereHas("tematica","alegoria")) | length }}</span></button>
+      <button class="chip" data-dim="tematica" data-val="animal">Animal <span class="count-num">{{ (curado | whereHas("tematica","animal")) | length }}</span></button>
+      <button class="chip" data-dim="tematica" data-val="mitologia">Mitología <span class="count-num">{{ (curado | whereHas("tematica","mitologia")) | length }}</span></button>
     </div>
   </div>
 
   <div class="drawer-group">
     <div class="group-label"><span>Artista</span></div>
     <div class="options">
-      <button class="chip" data-dim="artista" data-val="armelio">Armelio <span class="count-num">{{ (portfolio | where("artistaSlug","armelio")) | length }}</span></button>
-      <button class="chip" data-dim="artista" data-val="lyvan">Lyvan <span class="count-num">{{ (portfolio | where("artistaSlug","lyvan")) | length }}</span></button>
-      <button class="chip" data-dim="artista" data-val="macerll">Franco <span class="count-num">{{ (portfolio | where("artistaSlug","macerll")) | length }}</span></button>
+      <button class="chip" data-dim="artista" data-val="armelio">Armelio <span class="count-num">{{ (curado | where("artistaSlug","armelio")) | length }}</span></button>
+      <button class="chip" data-dim="artista" data-val="lyvan">Lyvan <span class="count-num">{{ (curado | where("artistaSlug","lyvan")) | length }}</span></button>
     </div>
   </div>
 
   <div class="drawer-group">
     <div class="group-label"><span>Tipo</span></div>
     <div class="options">
-      <button class="chip" data-dim="tipo" data-val="nuevo">Tatuaje nuevo <span class="count-num">{{ (portfolio | whereHas("tipo","nuevo")) | length }}</span></button>
-      <button class="chip" data-dim="tipo" data-val="cover-up">Cover-up <span class="count-num">{{ (portfolio | whereHas("tipo","cover-up")) | length }}</span></button>
-      <button class="chip" data-dim="tipo" data-val="retoque">Retoque <span class="count-num">{{ (portfolio | whereHas("tipo","retoque")) | length }}</span></button>
+      <button class="chip" data-dim="tipo" data-val="nuevo">Tatuaje nuevo <span class="count-num">{{ (curado | whereHas("tipo","nuevo")) | length }}</span></button>
+      <button class="chip" data-dim="tipo" data-val="cover-up">Cover-up <span class="count-num">{{ (curado | whereHas("tipo","cover-up")) | length }}</span></button>
+      <button class="chip" data-dim="tipo" data-val="retoque">Retoque <span class="count-num">{{ (curado | whereHas("tipo","retoque")) | length }}</span></button>
     </div>
   </div>
 
   <div class="drawer-footer">
     <button class="reset">Resetear</button>
-    <button class="apply">Ver piezas <span class="count-num">{{ portfolio | length }}</span></button>
+    <button class="apply">Ver piezas <span class="count-num">{{ curado | length }}</span></button>
   </div>
 </aside>

@@ -41,6 +41,30 @@ h1.hero-title.statement em{display:block;font-weight:700;font-style:normal;color
 .estilo-meta{display:flex;flex-direction:column;gap:3px;padding:12px 13px 14px}
 .estilo-name{font-family:var(--font-display);font-size:18px;font-weight:500;line-height:1.1}
 .estilo-desc{font-family:var(--font-body);font-size:12px;line-height:1.4;color:var(--muted)}
+/* Grilla de 3 técnicas */
+.estilos-grid--3{grid-template-columns:repeat(1,1fr)}
+.estilo-card--banner{background:var(--accent);color:var(--accent-ink);border:none;padding:26px 22px;position:relative;overflow:hidden}
+.banner-wm{position:absolute;right:-18px;bottom:-22px;color:rgba(10,10,12,.06);pointer-events:none;line-height:0}
+.banner-head{display:flex;align-items:center;gap:10px;margin-bottom:20px;position:relative;z-index:1}
+.estilo-ico-wa{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--accent-ink);color:var(--accent);flex-shrink:0}
+.banner-kicker{font-family:var(--font-body);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(10,10,12,.6)}
+.estilo-card--banner .estilo-name{font-size:30px;line-height:1.02;color:var(--accent-ink);position:relative;z-index:1}
+.banner-lede{font-family:var(--font-body);font-size:12.5px;line-height:1.5;color:rgba(10,10,12,.72);margin-top:10px;max-width:92%;position:relative;z-index:1}
+.banner-steps{display:flex;flex-direction:column;flex:1;justify-content:center;margin:16px 0;position:relative;z-index:1}
+.banner-step{display:flex;align-items:center;gap:11px;padding:10px 0;border-top:1px solid rgba(10,10,12,.14)}
+.banner-step:last-child{border-bottom:1px solid rgba(10,10,12,.14)}
+.banner-step-n{font-family:var(--font-display);font-size:17px;line-height:1;color:var(--accent-ink);min-width:15px}
+.banner-step-t{font-family:var(--font-body);font-size:12.5px;color:rgba(10,10,12,.85)}
+.estilo-cta-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--accent-ink);color:var(--fg);font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:.01em;padding:14px;border-radius:4px;position:relative;z-index:1;transition:transform .18s ease}
+.estilo-card--banner:hover .estilo-cta-btn svg{transform:translateX(3px)}
+.estilo-cta-btn svg{transition:transform .2s}
+/* Marquee de estilos bajo el hero */
+.marquee{overflow:hidden;background:#0d0d0e;border-top:1px solid #1f1f22;border-bottom:1px solid #1f1f22;padding:14px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:inline-flex;align-items:center;gap:22px;white-space:nowrap;will-change:transform;animation:marquee-scroll 34s linear infinite}
+.marquee-item{font-family:var(--font-display);font-size:20px;font-weight:500;letter-spacing:.02em;color:var(--fg-2);text-transform:uppercase}
+.marquee-sep{color:var(--accent);font-size:13px}
+@keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 .hero-sub{font-size:14px;line-height:1.55;color:var(--fg-2);opacity:.9;max-width:300px}
 .hero-sub--desk{display:none}
 .eyebrow-addr{display:none}
