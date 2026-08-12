@@ -309,3 +309,8 @@
   .bio-copy h2.section-title,
   .video-copy h2.section-title { font-size: 44px; }
 }
+
+/* Barra de WhatsApp: solo mobile/tablet. En desktop ya está el CTA fijo del navbar */
+@media (min-width: 1024px) {
+  .wa-bar { display: none; }
+}
