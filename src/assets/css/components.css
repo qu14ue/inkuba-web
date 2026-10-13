@@ -130,7 +130,7 @@ h1.hero-title.statement em{display:block;font-weight:700;font-style:normal;color
 .compare-meta .num{font-variant-numeric:tabular-nums;color:var(--fg-2);font-weight:500}
 .compare-hint{text-align:center;font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-2);margin-top:12px;display:inline-flex;align-items:center;gap:8px;width:100%;justify-content:center}
 
-/* === Garantía 90 días (colores corregidos a la paleta fría — antes tenía tonos sepia sueltos) === */
+/* === (ex) Garantía 90 días (colores corregidos a la paleta fría — antes tenía tonos sepia sueltos) === */
 .warranty{background:linear-gradient(180deg,#181c20 0%,#0e1013 60%,#070809 100%);border-top:1px solid var(--dark-panel-border);border-bottom:1px solid var(--dark-panel-border);padding:64px 20px;position:relative}
 .warranty-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 .warranty-tag::before{content:'';width:24px;height:1px;background:var(--accent)}

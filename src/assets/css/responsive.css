@@ -200,8 +200,8 @@
   section.works .works-media { display: block; align-self: center; aspect-ratio: 4 / 5; }
   section.works .works-media video { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block; background: #000; }
 
-  /* Inversión y garantía: dos tarjetas lado a lado */
-  .ig-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+  /* Inversión: una tarjeta */
+  .ig-cards { display: grid; grid-template-columns: minmax(0, 640px); gap: 24px; align-items: stretch; }
 
   /* Portfolio y galerías: 4 columnas */
   .grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
